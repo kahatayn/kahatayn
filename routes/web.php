@@ -46,8 +46,10 @@ Route::post('/logout',
 [VolunteerController :: class,'logout'])->middleware('auth');
 
 // //show log in form
-// Route::get('/login',
-// [VolunteerController :: class,'login'])->name('login')->middleware('guest');
+Route::get('/login',
+[VolunteerController :: class,'login'])->name('login')->middleware('guest');
+// Route::get('login', [VolunteerController::class, 'login'])->name('login');
+// Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
-// Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);
+Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);

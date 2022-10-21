@@ -78,6 +78,33 @@ public function logout(Request $request){
 
 }
 
+public function login()
+    {
+       return view('volunteers.login');
+    }
+    
+
+
+    public function authenticate(Request $request)
+    {
+       $formFields =  $request->validate([
+        'email' => 'required',
+        'password' => 'required',
+    ]);
+    if(auth()->attempt($formFields)){
+        $request->session()->regenerate();
+
+        return redirect('/');
+    }
+return back()->withErrors(
+[
+    'email'=> 'Invalid Credentials'
+]
+)->onlyInput('email');
+
+    }
+
+
     /**
      * Display the specified resource.
      *
