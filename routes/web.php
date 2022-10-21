@@ -44,6 +44,10 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 ###########
 #REGISTRATION
 ##########
@@ -72,4 +76,7 @@ Route::get(
 // Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
+
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
