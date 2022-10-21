@@ -16,7 +16,11 @@ use App\Http\Controllers\VolunteerController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
 });
 
 
