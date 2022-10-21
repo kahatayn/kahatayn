@@ -15,7 +15,7 @@ use App\Http\Controllers\EventController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
 // Route::get('user_events', [EventController::class, 'view']);
