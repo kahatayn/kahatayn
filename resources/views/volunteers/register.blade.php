@@ -1,4 +1,6 @@
+@extends('master');
 
+@section('content')
     <div class="p-10 rounded max-w-lg mx-auto mt-24 bg-gray-50 border border-gray-200 ">
       <header class="text-center">
           <h2 class="text-2xl font-bold uppercase mb-1">
@@ -101,4 +103,5 @@
           </div>
       </form>
     </div>
+    @endsection
   
