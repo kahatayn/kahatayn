@@ -33,10 +33,10 @@ Route::get('/', function () {
 
 // Route::get('user_events', [EventController::class, 'view']);
 
-// Route::get('events', [EventController::class, 'view']);
-Route::get('events', function () {
-    return view('Events');
-});
+Route::get('events', [EventController::class, 'view']);
+// Route::get('events', function () {
+//     return view('Events');
+// });
 
 
 // Route::get('event/{id}', [EventController::class, 'eventView']);
@@ -62,7 +62,7 @@ Route::get(
 Route::post('/volunteers', [VolunteerController::class, 'store']);
 
 //log user out
-Route::post(
+Route::get(
     '/logout',
     [VolunteerController::class, 'logout']
 )->middleware('auth');
@@ -80,3 +80,6 @@ Route::get(
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+
+
+Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');

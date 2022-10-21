@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class VolunteerController extends Controller
 {
@@ -40,68 +41,71 @@ class VolunteerController extends Controller
     //create new user 
     public function store(Request $request)
     {
+
+
         $formFields = $request->validate(
             [
                 'name' => ['required', 'min:3'],
                 'email' => ['required', 'email', Rule::unique('users', 'email')],
-                'password' => 'required|confirmed|min:6'
+                'password' => 'required|confirmed|min:6',
+                'phone' => ['required', 'max:10']
             ]
         );
+        $formFields['image'] = base64_encode(file_get_contents($request->file('profile_image')));
 
+        // 
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
-
-
         //create user
         $user = User::create($formFields);
 
         // /auto log
         auth()->login($user);
 
-        return redirect('/');
+        return redirect('profile');
         // ->with
         //     ('message', 'User created and logged in');
 
     }
-//logout 
+    //logout 
 
-public function logout(Request $request){
-
-    auth()->logout();
-
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-
-    return redirect('/');
-    // ->with('message','You have been logged out!');
-    
-
-}
-
-public function login()
+    public function logout(Request $request)
     {
-       return view('volunteers.login');
+
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('login');
+        // ->with('message','You have been logged out!');
+
+
     }
-    
+
+    public function login()
+    {
+        return view('volunteers.login');
+    }
+
 
 
     public function authenticate(Request $request)
     {
-       $formFields =  $request->validate([
-        'email' => 'required',
-        'password' => 'required',
-    ]);
-    if(auth()->attempt($formFields)){
-        $request->session()->regenerate();
+        $formFields =  $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
 
-        return redirect('/');
-    }
-return back()->withErrors(
-[
-    'email'=> 'Invalid Credentials'
-]
-)->onlyInput('email');
-
+            return redirect('/profile');
+        }
+        return back()->withErrors(
+            [
+                'email' => 'Invalid Credentials'
+            ]
+        )->onlyInput('email');
     }
 
 
@@ -148,5 +152,12 @@ return back()->withErrors(
     public function destroy(volunteer $volunteer)
     {
         //
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+
+        return view('profile', ["user" => $user]);
     }
 }

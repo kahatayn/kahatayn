@@ -9,7 +9,7 @@
           <p class="mb-4">سجل حساب جديد و ابدأ رحلتك كمتطوع معنا</p>
       </header>
   
-      <form action="/volunteers" method="POST">
+      <form action="/volunteers" method="POST" enctype="multipart/form-data">
           @csrf
           @method('POST')
           <div class="mb-6 text-end">
@@ -45,6 +45,45 @@
               </p>
           @enderror
           </div>
+
+          <div class="mb-6 text-end">
+            <label
+                for="phone"
+                class="inline-block text-lg mb-2"
+            >
+            الرقم            </label>
+            <input
+                type="number"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="phone"
+            />
+            @error('image')
+            <p class="text-red-500 text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
+        </div>
+
+          <div class="mb-6 text-end">
+            <label
+                for="profile_image"
+                class="inline-block text-lg mb-2"
+            >
+            الصورة الشخصية
+            </label>
+            <input
+                type="file"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="profile_image"
+            />
+            @error('image')
+            <p class="text-red-500 text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
+        </div>
+
+
   
           <div class="mb-6 text-end">
               <label
