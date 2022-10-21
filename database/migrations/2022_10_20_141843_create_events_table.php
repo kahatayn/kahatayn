@@ -16,11 +16,9 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->binary('image');
             $table->timestamp('date');
             $table->string('location');
-            $table->bigInteger('user_id')->unsigned();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
