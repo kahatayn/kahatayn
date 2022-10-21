@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\volunteer;
 use Illuminate\Http\Request;
+use auth;
 
 class VolunteerController extends Controller
 {
@@ -14,9 +15,44 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
+    public function volunteers(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+       
+    }
+
+    public function login()
+    {
+       return view('auth.login');
+    }
+    
+    public function authenticate(Request $request)
+    {
+       $formFields =  $request->validate([
+        'email' => 'required',
+        'password' => 'required',
+    ]);
+    if(auth()->attempt($formFields)){
+        $request->session()->regenerate();
+
+        return redirect('/');
+    }
+return back()->withErrors(
+[
+    'email'=> 'Invalid Credentials'
+]
+)->onlyInput('email');
+
+    }
+
+    
     /**
      * Show the form for creating a new resource.
      *

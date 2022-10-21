@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\VolunteerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('login', [VolunteerController::class, 'login'])->name('login');
+Route::post('custom-login', [VolunteerController::class, 'volunteers'])->name('volunteers');
+Route::get('volunteers', [VolunteerController::class, 'index'])->name('volunteers');
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
