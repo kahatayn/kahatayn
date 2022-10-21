@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\VolunteerController;
 
 /*
@@ -32,9 +33,13 @@ Route::get('/', function () {
 
 // Route::get('user_events', [EventController::class, 'view']);
 
-Route::get('events', [EventController::class, 'view']);
+// Route::get('events', [EventController::class, 'view']);
+Route::get('events', function () {
+    return view('Events');
+});
 
-Route::get('event/{id}', [EventController::class, 'eventView']);
+
+// Route::get('event/{id}', [EventController::class, 'eventView']);
 Route::get('/profile', function () {
     return view('profile');
 });
