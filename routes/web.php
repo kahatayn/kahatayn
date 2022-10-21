@@ -23,3 +23,6 @@ Route::get('/', function () {
 Route::get('events', [EventController::class, 'view']);
 
 Route::get('event/{id}', [EventController::class, 'eventView']);
+Route::get('/profile', function () {
+    return view('profile');
+});
