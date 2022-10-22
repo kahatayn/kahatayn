@@ -1,4 +1,6 @@
      <!-- Navbar Start -->
+
+
  <!-- Navbar Start -->
  <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
@@ -13,6 +15,7 @@
             <a class="text-white-50 ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
             <a class="text-white-50 ms-3" href=""><i class="fab fa-instagram"></i></a>
         </div>
+
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
@@ -30,6 +33,7 @@
                 <a href="#" class="nav-item nav-link">حول الموقع</a>
                 <a href="#" class="nav-item nav-link">اتصل بنا</a>
             </div>
+           
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="">
                     تبرع الآن
@@ -37,6 +41,7 @@
                         <i class="fa fa-arrow-left"></i>
                     </div>
                 </a></div>
+                @if (Auth::user())
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="">
                     حسابي
@@ -44,6 +49,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                 </a></div>
+                @endif
         </div>
     </nav>
 </div>
