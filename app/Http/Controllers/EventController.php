@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -81,5 +82,18 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+    }
+
+    public function view()
+    {
+        $event = Event::all();
+        // dd($event);
+        return view('events', ["events" => $event]);
+    }
+    public function eventView($id)
+    {
+        $event = Event::find($id);
+        // dd($event);
+        return view('eventView', ["event" => $event]);
     }
 }

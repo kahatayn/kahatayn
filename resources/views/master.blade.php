@@ -5,21 +5,21 @@
  <title>home</title>
 </head>
 
-<body style="
-background: #4b4a4a;
-">
+<body >
 
-  <header>
-    @include('includes.navbar')
-  </header>
+  
+      @include('includes.navbar')
 
-<main>
+
+  
+
+
   @yield('content')
-</main>
 
-<footer>
+
+
   @include('includes.footer')
-</footer>
+
 
  </body>
 </html>

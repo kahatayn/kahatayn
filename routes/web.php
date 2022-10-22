@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\VolunteerController;
 
 /*
@@ -27,11 +28,24 @@ use App\Http\Controllers\VolunteerController;
 // new route => new controller method => new view 
 
 Route::get('/', function () {
-    return view('master');
+    return view('index');
 });
 
+// Route::get('user_events', [EventController::class, 'view']);
+
+Route::get('events', [EventController::class, 'view']);
+// Route::get('events', function () {
+//     return view('Events');
+// });
+
+
+// Route::get('event/{id}', [EventController::class, 'eventView']);
 Route::get('/profile', function () {
     return view('profile');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 ###########
@@ -39,19 +53,25 @@ Route::get('/profile', function () {
 ##########
 
 //show register/create form
-Route::get('/register',
-[VolunteerController :: class,'create'])->middleware('guest');
+Route::get(
+    '/register',
+    [VolunteerController::class, 'create']
+)->middleware('guest');
 
 //create new user
-Route::post('/volunteers',[VolunteerController :: class,'store']);
+Route::post('/volunteers', [VolunteerController::class, 'store']);
 
 //log user out
-Route::post('/logout',
-[VolunteerController :: class,'logout'])->middleware('auth');
+Route::get(
+    '/logout',
+    [VolunteerController::class, 'logout']
+)->middleware('auth');
 
 // //show log in form
-Route::get('/login',
-[VolunteerController :: class,'login'])->name('login')->middleware('guest');
+Route::get(
+    '/login',
+    [VolunteerController::class, 'login']
+)->name('login')->middleware('guest');
 // Route::get('login', [VolunteerController::class, 'login'])->name('login');
 // Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
@@ -86,3 +106,9 @@ Route::get('/register/facebook',
 Route::get('/register/facebook/redirect',
 [VolunteerController :: class,'facebookRedirect'])->middleware('guest');
 
+
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+
+Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
+
+Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
