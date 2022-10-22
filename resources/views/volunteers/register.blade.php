@@ -12,6 +12,13 @@
       <form action="/volunteers" method="POST">
           @csrf
           @method('POST')
+
+          <div class="col-md-6 offset-md-3">
+            <a href="/register/google" class="btn btn-danger btn-block">Login with Google</a>
+            <a href="/register/facebook" class="btn btn-primary btn-block">Login with Facebook</a>
+            <a href="/register/github" class="btn btn-dark btn-block">Login with Github</a>
+         </div>
+         
           <div class="mb-6 text-end">
               <label for="name" class="inline-block text-lg  mb-2">
                   الاسم

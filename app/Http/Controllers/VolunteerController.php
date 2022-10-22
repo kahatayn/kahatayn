@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Laravel\Socialite\Facades\Socialite;
 
 class VolunteerController extends Controller
 {
@@ -149,4 +150,60 @@ return back()->withErrors(
     {
         //
     }
+
+    //////////////
+    // log with social
+public function github()
+{
+    //send the user request to github
+    return Socialite::driver('github')->stateless()->redirect();
+
+}
+
+public function githubRedirect()
+{
+    //get auth request back to authenticate user
+    
+$user = Socialite::driver('github')->stateless()->user();
+
+$this->_registerorLoginUser($user);
+return redirect('/');
+}
+
+
+
+public function google()
+{
+    //send the user request to google
+    return Socialite::driver('google')->stateless()->redirect();
+
+}
+
+public function googleRedirect()
+{
+    //get auth request back to authenticate user
+    $user = Socialite::driver('google')->stateless()->user();
+
+  $this->_registerorLoginUser($user);
+  return redirect('/');
+}
+
+
+
+public function facebook()
+{
+    //send the user request to facebook
+    return Socialite::driver('facebook')->stateless()->redirect();
+
+}
+
+public function facebookRedirect()
+{
+    //get auth request back to authenticate user
+    $user = Socialite::driver('facebook')->stateless()->user();
+
+  $this->_registerorLoginUser($user);
+  return redirect('/');
+}
+
 }
