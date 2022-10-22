@@ -28,7 +28,7 @@ use App\Http\Controllers\VolunteerController;
 // new route => new controller method => new view 
 
 Route::get('/', function () {
-    return view('master');
+    return view('index');
 });
 
 // Route::get('user_events', [EventController::class, 'view']);
@@ -78,9 +78,6 @@ Route::get(
 // //login user
 
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
-
-Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
-
 
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
 
