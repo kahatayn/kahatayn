@@ -1,14 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-use App\Http\Controllers\DonationController;
-=======
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\VolunteerController;
 
->>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,19 +17,6 @@ use App\Http\Controllers\VolunteerController;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('donate', function () {
-    return view('donate');
-});
-Route::get('visa', function () {
-    return view('visa');
-});
-Route::get('donate', [DonationController::class, 'show']);
-Route::post('create', [DonationController::class, 'store']);
-=======
 // Common Resource Routes:
 // index - Show all listings
 // show - Show single listing
@@ -99,4 +83,13 @@ Route::post('/users/authenticate', [VolunteerController::class, 'authenticate'])
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
 
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
->>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
+
+//donate
+Route::get('donate', function () {
+    return view('donate');
+});
+Route::get('visa', function () {
+    return view('visa');
+});
+Route::get('donate', [DonationController::class, 'show']);
+Route::post('create', [DonationController::class, 'store']);

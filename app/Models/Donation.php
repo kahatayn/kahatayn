@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Donation extends Model
 {
-<<<<<<< HEAD
     protected $table = 'donations';
 	public $timestamps = true;
 	/**
@@ -19,7 +18,3 @@ class Donation extends Model
 		'name', 'email','card_num', 'amount',
 	];
 }
-=======
-    use HasFactory;
-}
->>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
