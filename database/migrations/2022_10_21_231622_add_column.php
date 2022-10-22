@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->binary('image');
-            $table->timestamp('date');
-            $table->string('location');
+        Schema::table('users', function (Blueprint $table) {
+            $table->bigInteger('phone')->after("image")->max(10);
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

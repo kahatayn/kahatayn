@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\User;
 use App\Models\volunteer;
 use Illuminate\Http\Request;
-use auth;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class VolunteerController extends Controller
 {
@@ -15,52 +18,22 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-       
+        //
     }
 
-    public function volunteers(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-       
-    }
-
-    public function login()
-    {
-       return view('auth.login');
-    }
-    
-    public function authenticate(Request $request)
-    {
-       $formFields =  $request->validate([
-        'email' => 'required',
-        'password' => 'required',
-    ]);
-    if(auth()->attempt($formFields)){
-        $request->session()->regenerate();
-
-        return redirect('/');
-    }
-return back()->withErrors(
-[
-    'email'=> 'Invalid Credentials'
-]
-)->onlyInput('email');
-
-    }
-
-    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    //show register/create form
     public function create()
     {
-        //
+        if (Auth::user()) {
+            return view('index');
+        }
+        return view('volunteers.register');
     }
 
     /**
@@ -69,10 +42,56 @@ return back()->withErrors(
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //create new user 
     public function store(Request $request)
     {
         //
     }
+    //logout 
+
+    public function logout(Request $request)
+    {
+
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+        // ->with('message','You have been logged out!');
+
+
+    }
+
+    public function login()
+    {
+        if (Auth::user()) {
+            return view('index');
+        }
+        return view('volunteers.login');
+    }
+
+
+
+    public function authenticate(Request $request)
+    {
+        $formFields =  $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/profile');
+        }
+        return back()->withErrors(
+            [
+                'email' => 'Invalid Credentials'
+            ]
+        )->onlyInput('email');
+    }
+
+
 
     /**
      * Display the specified resource.
@@ -117,5 +136,19 @@ return back()->withErrors(
     public function destroy(volunteer $volunteer)
     {
         //
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $events = $user->events;
+        return view('profile', ["user" => $user, "events" => $events]);
+    }
+
+    public function eventDescription($id)
+    {
+        $event = Event::find($id);
+
+        return view('eventDescription', ["event" => $event]);
     }
 }
