@@ -1,3 +1,4 @@
+@extends('master')
 <body>
 
     <!-- Carousel Start -->

@@ -1,5 +1,5 @@
 
-
+@extends('master')
 <body>
     <!-- Spinner Start -->
 

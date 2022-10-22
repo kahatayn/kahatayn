@@ -1,4 +1,4 @@
-@extends('master');
+@extends('master')
 
 @section('content')
     <div class="p-10 rounded max-w-lg mx-auto mt-24 bg-gray-50 border border-gray-200 ">

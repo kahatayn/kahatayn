@@ -1,6 +1,10 @@
-@extends('master');
+@extends('master')
 
 @section('content')
+{{-- <div
+class="container-fluid page-header mb-5 wow fadeIn"
+data-wow-delay="0.1s"
+></div> --}}
 <section style="background-color: #eee;">
     <div class="container py-5">
       <div class="row">
