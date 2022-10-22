@@ -1,15 +1,5 @@
-
-
+@extends('master')
 <body>
-    <!-- Spinner Start -->
-
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-
-    <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
