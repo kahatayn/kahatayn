@@ -31,7 +31,7 @@ class VolunteerController extends Controller
     public function create()
     {
         if (Auth::user()) {
-            return view('welcome');
+            return view('index');
         }
         return view('volunteers.register');
     }
@@ -81,7 +81,7 @@ class VolunteerController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect('/');
         // ->with('message','You have been logged out!');
 
 
@@ -90,7 +90,7 @@ class VolunteerController extends Controller
     public function login()
     {
         if (Auth::user()) {
-            return view('welcome');
+            return view('index');
         }
         return view('volunteers.login');
     }
