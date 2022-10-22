@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\DonationController;
+=======
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\VolunteerController;
+
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +20,7 @@ use App\Http\Controllers\DonationController;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,3 +32,71 @@ Route::get('visa', function () {
 });
 Route::get('donate', [DonationController::class, 'show']);
 Route::post('create', [DonationController::class, 'store']);
+=======
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing  
+
+// new route => new controller method => new view 
+
+Route::get('/', function () {
+    return view('index');
+});
+
+// Route::get('user_events', [EventController::class, 'view']);
+
+Route::get('events', [EventController::class, 'view']);
+// Route::get('events', function () {
+//     return view('Events');
+// });
+
+
+// Route::get('event/{id}', [EventController::class, 'eventView']);
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+###########
+#REGISTRATION
+##########
+
+//show register/create form
+Route::get(
+    '/register',
+    [VolunteerController::class, 'create']
+)->middleware('guest');
+
+//create new user
+Route::post('/volunteers', [VolunteerController::class, 'store']);
+
+//log user out
+Route::get(
+    '/logout',
+    [VolunteerController::class, 'logout']
+)->middleware('auth');
+
+// //show log in form
+Route::get(
+    '/login',
+    [VolunteerController::class, 'login']
+)->name('login')->middleware('guest');
+// Route::get('login', [VolunteerController::class, 'login'])->name('login');
+// Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+
+// //login user
+
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+
+Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
+
+Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8

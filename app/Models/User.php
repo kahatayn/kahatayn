@@ -19,6 +19,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+<<<<<<< HEAD
+=======
+        'image',
+        'phone',
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
         'email',
         'password',
     ];
@@ -41,4 +46,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
 }
+=======
+
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
+}
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8

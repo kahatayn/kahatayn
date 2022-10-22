@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+<<<<<<< HEAD
             $table->string('email');
             $table->integer('card_num')->unique();
             $table->timestamp('date');
@@ -24,6 +25,11 @@ return new class extends Migration
             $table->rememberToken();
 
 
+=======
+            $table->integer('card')->unique();
+            $table->timestamp('date');
+            $table->float('amount');
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
         });
     }
 

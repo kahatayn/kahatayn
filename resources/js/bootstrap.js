@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import _ from 'lodash';
+=======
+import _ from "lodash";
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 window._ = _;
 
 /**
@@ -7,10 +11,17 @@ window._ = _;
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+<<<<<<< HEAD
 import axios from 'axios';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+=======
+import axios from "axios";
+window.axios = axios;
+
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('role')->default(0);
+<<<<<<< HEAD
+=======
+            $table->rememberToken();
+            $table->timestamps();
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
         });
     }
 
@@ -31,4 +36,8 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8

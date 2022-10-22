@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\volunteer;
 use Illuminate\Http\Request;
+=======
+use App\Models\Event;
+use App\Models\User;
+use App\Models\volunteer;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 
 class VolunteerController extends Controller
 {
@@ -22,9 +31,20 @@ class VolunteerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function create()
     {
         //
+=======
+
+    //show register/create form
+    public function create()
+    {
+        if (Auth::user()) {
+            return view('index');
+        }
+        return view('volunteers.register');
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
     }
 
     /**
@@ -33,10 +53,86 @@ class VolunteerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function store(Request $request)
     {
         //
     }
+=======
+    //create new user 
+    public function store(Request $request)
+    {
+
+
+        $formFields = $request->validate(
+            [
+                'name' => ['required', 'min:3'],
+                'email' => ['required', 'email', Rule::unique('users', 'email')],
+                'password' => 'required|confirmed|min:6',
+                'phone' => ['required', 'max:10']
+            ]
+        );
+        $formFields['image'] = base64_encode(file_get_contents($request->file('profile_image')));
+
+        // 
+        //hash password
+        $formFields['password'] = bcrypt($formFields['password']);
+        //create user
+        $user = User::create($formFields);
+
+        // /auto log
+        auth()->login($user);
+
+        return redirect('profile');
+        // ->with
+        //     ('message', 'User created and logged in');
+
+    }
+    //logout 
+
+    public function logout(Request $request)
+    {
+
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+        // ->with('message','You have been logged out!');
+
+
+    }
+
+    public function login()
+    {
+        if (Auth::user()) {
+            return view('index');
+        }
+        return view('volunteers.login');
+    }
+
+
+
+    public function authenticate(Request $request)
+    {
+        $formFields =  $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/profile');
+        }
+        return back()->withErrors(
+            [
+                'email' => 'Invalid Credentials'
+            ]
+        )->onlyInput('email');
+    }
+
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 
     /**
      * Display the specified resource.
@@ -82,4 +178,22 @@ class VolunteerController extends Controller
     {
         //
     }
+<<<<<<< HEAD
 }
+=======
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $events = $user->events;
+        return view('profile', ["user" => $user, "events" => $events]);
+    }
+
+    public function eventDescription($id)
+    {
+        $event = Event::find($id);
+
+        return view('eventDescription', ["event" => $event]);
+    }
+}
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8

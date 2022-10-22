@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+=======
+use App\Models\User;
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -82,4 +86,21 @@ class EventController extends Controller
     {
         //
     }
+<<<<<<< HEAD
 }
+=======
+
+    public function view()
+    {
+        $event = Event::all();
+        // dd($event);
+        return view('events', ["events" => $event]);
+    }
+    public function eventView($id)
+    {
+        $event = Event::find($id);
+        // dd($event);
+        return view('eventView', ["event" => $event]);
+    }
+}
+>>>>>>> c53e042863812bee9e4eeb422bbdb167a6f92db8
