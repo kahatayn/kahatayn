@@ -83,3 +83,5 @@ Route::post('/users/authenticate', [VolunteerController::class, 'authenticate'])
 
 
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
+
+Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);

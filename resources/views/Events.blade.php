@@ -60,7 +60,7 @@
             <div class="position-relative mt-auto">
               <img class="img-fluid" src="img/courses-1.jpg" alt="" />
               <div class="causes-overlay">
-                <a class="btn btn-outline-primary" href="">
+                <a class="btn btn-outline-primary" href="eventDescription/{{ $event->id }}">
                   Read More
                   <div
                     class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2"

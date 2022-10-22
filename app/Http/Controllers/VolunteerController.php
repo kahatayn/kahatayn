@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\User;
 use App\Models\volunteer;
 use Illuminate\Http\Request;
@@ -29,6 +30,9 @@ class VolunteerController extends Controller
     //show register/create form
     public function create()
     {
+        if (Auth::user()) {
+            return view('welcome');
+        }
         return view('volunteers.register');
     }
 
@@ -85,6 +89,9 @@ class VolunteerController extends Controller
 
     public function login()
     {
+        if (Auth::user()) {
+            return view('welcome');
+        }
         return view('volunteers.login');
     }
 
@@ -159,5 +166,12 @@ class VolunteerController extends Controller
         $user = Auth::user();
         $events = $user->events;
         return view('profile', ["user" => $user, "events" => $events]);
+    }
+
+    public function eventDescription($id)
+    {
+        $event = Event::find($id);
+
+        return view('eventDescription', ["event" => $event]);
     }
 }

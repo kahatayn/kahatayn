@@ -23,8 +23,6 @@
                         </div>
                     </a></div>
                     @if (Auth::user())
-                        
-                   
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-outline-primary py-2 px-3" href="profile">
                         حسابي
