@@ -157,7 +157,7 @@ class VolunteerController extends Controller
     public function profile()
     {
         $user = Auth::user();
-
-        return view('profile', ["user" => $user]);
+        $events = $user->events;
+        return view('profile', ["user" => $user, "events" => $events]);
     }
 }

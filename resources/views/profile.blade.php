@@ -29,10 +29,7 @@
           <div class="card mb-4 mb-lg-0">
             <div class="card-body p-0">
               <ul class="list-group list-group-flush rounded-3">
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">https://mdbootstrap.com</p>
-                </li>
+              
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
                   <p class="mb-0">mdbootstrap</p>
@@ -76,7 +73,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Phone</p>
+                  <p class="mb-0">رقم الهاتف : </p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ $user->phone }}</p>
@@ -155,6 +152,39 @@
         </div>
       </div>
     </div>
+
+    {{-- events section --}}
+        <div class="container h-100">
+          <div class="row d-flex flex-wrap justify-content-center align-items-center ">
+            
+            @foreach ($events as $event)
+              <div class="card m-3" style="border-radius: 15px;
+              width:35rem;">
+                <div class="card-body p-4">
+                  <h3 class="mb-3">{{ $event->name }}</h3>
+                  <p class="small mb-0"><i class="fas fa-star fa-lg text-warning"></i> <span class="mx-2">|</span>
+                    عام <span class="mx-2">|</span> الفعالية في  <strong>{{ $event->location }}</strong> بتاريخ : {{ explode(' ',$event->date)[0] }}
+                  </p>
+                  <hr class="my-4">
+                  {{-- <div class="d-flex justify-content-start align-items-center">
+                    <p class="mb-0 text-uppercase"><i class="fas fa-cog me-2"></i> <span
+                        class="text-muted small">settings</span></p>
+                    <p class="mb-0 text-uppercase"><i class="fas fa-link ms-4 me-2"></i> <span
+                        class="text-muted small">program link</span></p>
+                    <p class="mb-0 text-uppercase"><i class="fas fa-ellipsis-h ms-4 me-2"></i> <span
+                        class="text-muted small">program link</span>
+                        
+                  </div> --}}
+                  <div class="widget-49-meeting-action">
+                    <a href="#" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+
+
   </section>
 
 @endsection
