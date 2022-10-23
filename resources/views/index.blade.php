@@ -76,7 +76,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/e4cf17ab-6818-43e0-b2cd-8582f1333ded.jfif" alt="" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/team.jpg" alt="" style="object-fit: cover;">
                         <img class="position-absolute top-0 end-0 bg-warning ps-2 pb-2 " src="img/logo_kha.png" alt="" style="width: 200px; height: 200px;" >
                     </div>
                 </div>
@@ -229,7 +229,7 @@
 
 
     <!-- Donate Start -->
-    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="img/caroline-hernandez.jpg">
+    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="public\img\test.jpg">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
