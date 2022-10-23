@@ -24,9 +24,9 @@ use App\Http\Controllers\VolunteerController;
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing
 
-// new route => new controller method => new view 
+// new route => new controller method => new view
 
 Route::get('/', function () {
     return view('index');
@@ -106,3 +106,20 @@ Route::get('/showEvents', [EventController::class, "show"])->name('showEvent');
 Route::post('/createEvent', [EventController::class, "store"])->name('createEvent');
 // Route::delete('/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
 // Route::get('update/{id}', [EventController::class, 'update'])->name('updateEvent');
+//Dashboard
+
+Route::get('dashboard', function () {
+    return view('dashboard.index');
+});
+
+Route::get('users', function () {
+    return view('dashboard.users');
+});
+
+Route::get('admin', function () {
+    return view('dashboard.admin');
+});
+
+Route::get('events', function () {
+    return view('dashboard.events');
+});
