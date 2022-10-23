@@ -1,6 +1,10 @@
 @extends('master')
 
 @section('content')
+<div
+class="container-fluid page-header mb-5 wow fadeIn"
+data-wow-delay="0.1s">
+</div>
     <div class="p-10 rounded max-w-lg mx-auto mt-24 bg-gray-50 border border-gray-200 ">
       <header class="text-center">
           <h2 class="text-2xl font-bold uppercase mb-1">

@@ -3,20 +3,7 @@
 
  <!-- Navbar Start -->
  <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
-            <small><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
-        </div>
-        <div class="col-lg-6 px-5 text-end">
-            <small>Follow us:</small>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-twitter"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-instagram"></i></a>
-        </div>
 
-    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
@@ -33,7 +20,7 @@
                 <a href="#" class="nav-item nav-link">حول الموقع</a>
                 <a href="#" class="nav-item nav-link">اتصل بنا</a>
             </div>
-           
+
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="#">
                     تبرع الآن
@@ -53,7 +40,7 @@
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-outline-primary py-2 px-3" href="logout">
                         تسجيل الخروج
-                       
+
                     </a></div>
                 @endif
         </div>
