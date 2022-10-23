@@ -12,9 +12,13 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $Donations = Donation::all();
+        $data = [
+            'name' => 'Donation',
+            'Donation' => $Donations
+        ];
+        return view('Donat.layout', $data);
     }
 
     /**
@@ -27,7 +31,19 @@ class DonationController extends Controller
         //
     }
 
+   
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Donation  $donation
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+     return view ('donate');
+    }
+
+     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,18 +51,16 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $formfiled=  $request->validate(
+            [
+                'name'=>['required','min:3'],
+                'email'=>['required','email'],
+                'amount'=>['required','numeric','min:1']
+            ]
+            );
+            Donation :: create($formfiled);
+            return redirect('/');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Donation  $donation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Donation $donation)
-    {
-        //
     }
 
     /**

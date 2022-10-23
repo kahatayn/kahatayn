@@ -87,3 +87,13 @@ Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescripti
 Route::get('admin/dashboard', function () {
     return view('Dashboard.dashboard');
 })->middleware('can:admin');
+// //donation
+
+Route::get('donate', function () {
+    return view('donate');
+});
+Route::get('visa', function () {
+    return view('visa');
+});
+Route::get('donate', [DonationController::class, 'show']);
+Route::post('create', [DonationController::class, 'store']);
