@@ -13,14 +13,14 @@
                 <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
             </div>
-           
+
     <div class="container-fluid copyright">
         <div class="container">
             <div class="row">
                 <div class="">
                     &copy; جميع الحقوق محفوظة, كهاتين
                 </div>
-                
+
             </div>
         </div>
     </div>
