@@ -1,14 +1,6 @@
 
 @extends('master')
 <body>
-    <!-- Spinner Start -->
-
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-
-    <!-- Navbar End -->
 
 
     <!-- Page Header Start -->
