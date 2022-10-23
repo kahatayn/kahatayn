@@ -112,3 +112,14 @@ Route::post('/users/authenticate', [VolunteerController::class, 'authenticate'])
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
 
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
+
+// //donation
+
+Route::get('donate', function () {
+    return view('donate');
+});
+Route::get('visa', function () {
+    return view('visa');
+});
+Route::get('donate', [DonationController::class, 'show']);
+Route::post('create', [DonationController::class, 'store']);
