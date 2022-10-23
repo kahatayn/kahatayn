@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-4">
-                <img src="{{ asset('images/hand.png') }}" alt="" style="width:60%; height:auto;">
+                <img src="{{ asset('img/hand.png') }}" alt="" style="width:60%; height:auto;">
                 <p>نص</p>
 
             </div>
@@ -40,3 +40,4 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+{{-- <script src="https://cdn.tailwindcss.com"></script> --}}

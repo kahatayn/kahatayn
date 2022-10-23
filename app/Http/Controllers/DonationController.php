@@ -43,6 +43,11 @@ class DonationController extends Controller
      return view ('donate');
     }
 
+    public function showVisa()
+    {
+     return view ('visa');
+    }
+
      /**
      * Store a newly created resource in storage.
      *
@@ -55,9 +60,12 @@ class DonationController extends Controller
             [
                 'name'=>['required','min:3'],
                 'email'=>['required','email'],
-                'amount'=>['required','numeric','min:1']
+                'amount'=>['required','numeric','min:1'],
+                'card'=>['required','numeric','min:16']
             ]
             );
+     
+            //store data -> ask for visa if true create record else redirect back
             Donation :: create($formfiled);
             return redirect('/');
 

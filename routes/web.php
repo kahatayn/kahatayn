@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
 
 /*
@@ -114,12 +115,13 @@ Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('aut
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
 
 // //donation
+//show donation page//form
+Route::get('/donate',  [DonationController::class, 'show']);
 
-Route::get('donate', function () {
-    return view('donate');
-});
-Route::get('visa', function () {
+Route::post('/donate/details', [DonationController::class, 'store']);
+
+// show visa form
+Route::get('/donate/visaDetails', function(){
     return view('visa');
 });
-Route::get('donate', [DonationController::class, 'show']);
-Route::post('create', [DonationController::class, 'store']);
+// Route::post('create', [DonationController::class, 'store']);
