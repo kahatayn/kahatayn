@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-4">
-                <img src="{{ asset('images/hand.png') }}" alt="" style="width:60%; height:auto;">
+                <img src="{{ asset('img/hand.png') }}" alt="" style="width:60%; height:auto;">
                 <p>نص</p>
 
             </div>
