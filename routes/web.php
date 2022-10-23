@@ -31,6 +31,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
 // Route::get('user_events', [EventController::class, 'view']);
 
 Route::get('events', [EventController::class, 'view']);
@@ -72,8 +75,6 @@ Route::get(
     '/login',
     [VolunteerController::class, 'login']
 )->name('login')->middleware('guest');
-// Route::get('login', [VolunteerController::class, 'login'])->name('login');
-// Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
 
@@ -82,3 +83,7 @@ Route::post('/users/authenticate', [VolunteerController::class, 'authenticate'])
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
 
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
+
+Route::get('admin/dashboard', function () {
+    return view('Dashboard.dashboard');
+})->middleware('can:admin');

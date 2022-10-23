@@ -8,6 +8,7 @@ use App\Models\volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class VolunteerController extends Controller
 {
@@ -83,8 +84,6 @@ class VolunteerController extends Controller
 
         return redirect('/');
         // ->with('message','You have been logged out!');
-
-
     }
 
     public function login()
@@ -103,7 +102,12 @@ class VolunteerController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        if (auth()->attempt($formFields)) {
+
+        if (Auth::attempt($formFields) && Gate::allows('admin')) {
+            $request->session()->regenerate();
+
+            return view('Dashboard.dashboard');
+        } elseif (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
             return redirect('/profile');
