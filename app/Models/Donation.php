@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Donation extends Model
 {
-    use HasFactory;
+    protected $table = 'donations';
+	public $timestamps = true;
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+		'name', 'email','card_num', 'amount',
+	];
 }
