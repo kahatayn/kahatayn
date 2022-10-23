@@ -1,9 +1,6 @@
 @extends('master')
-<body>
-    <div
-    class="container-fluid page-header mb-5 wow fadeIn"
-    data-wow-delay="0.1s"
-    >
+
+  
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -77,7 +74,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
                         <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/team.jpg" alt="" style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-warning ps-2 pb-2 " src="img/logo_kha.png" alt="" style="width: 200px; height: 200px;" >
+                        <img class="position-absolute top-0 end-0 bg-warning ps-2 pb-2 " src="img/hand.png" alt="" style="width: 200px; height: 200px;" >
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -350,7 +347,3 @@
 
 
     <!-- JavaScript Libraries -->
-
-</body>
-
-</html>
