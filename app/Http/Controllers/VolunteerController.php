@@ -42,7 +42,7 @@ class VolunteerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    //create new user 
+    //create new user
     public function store(Request $request)
     {
 
@@ -57,7 +57,7 @@ class VolunteerController extends Controller
         );
         $formFields['image'] = base64_encode(file_get_contents($request->file('profile_image')));
 
-        // 
+        //
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
         //create user
@@ -71,7 +71,7 @@ class VolunteerController extends Controller
         //     ('message', 'User created and logged in');
 
     }
-    //logout 
+    //logout
 
     public function logout(Request $request)
     {
