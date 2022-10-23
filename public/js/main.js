@@ -24,7 +24,7 @@
             }
         } else {
             if ($(this).scrollTop() > 45) {
-                $(".fixed-top").addClass("bg-dark shadow").css("top", -45);
+                $(".fixed-top").addClass("bg-dark shadow");
             } else {
                 $(".fixed-top").removeClass("bg-dark shadow").css("top", 0);
             }

@@ -17,7 +17,7 @@
                 <a href="#" class="nav-item nav-link">حول الموقع</a>
                 <a href="#" class="nav-item nav-link">اتصل بنا</a>
             </div>
-           
+
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="#">
                     تبرع الآن
@@ -37,7 +37,7 @@
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-outline-primary py-2 px-3" href="logout">
                         تسجيل الخروج
-                       
+
                     </a></div>
                 @endif
         </div>
