@@ -2,76 +2,87 @@
 
 @section('content')
 <div
-class="container-fluid page-header mb-5 wow fadeIn"
-data-wow-delay="0.1s">
-</div>
-<div class="p-10 rounded max-w-lg mx-auto mt-24 bg-gray-50 border border-gray-200 ">
-    <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-1">
-            مرحبا بك
-        </h2>
-        <p class="mb-4"></p>
-    </header>
+      class="container-fluid page-header mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    ></div>
+<section class="vh-20" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-0">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                    <header class="text-center">
+                        <h2 class="text-2xl font-bold uppercase mb-1">
+                            مرحبا بك من جديد
+                        </h2>
+                        <p class="mb-4"></p>
+                    </header>
+  
+                  <form action="/users/authenticate" method="POST" enctype="multipart/form-data" class="mx-1 mx-md-4">
+                    @csrf
+                    @method('POST')
+                    
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example3c">بريد الالكتروني</label>
+                        <input type="email" id="form3Example3c" class="form-control" name="email" value="{{old('email')}}" />
+                        @error('email')
+                        <p class="text-red-500 text-xs mt-1">
+                            {{$message}}
+                        </p>
+                    @enderror  
+                    </div>
+                    </div>
 
-    
+                   
 
-    <form action="/users/authenticate" method="POST">
-        @csrf
-        @method('POST')
-             <div class="mb-6 text-end">
-            <label for="email" class="inline-block text-lg mb-2"
-                >الايميل</label
-            >
-            <input
-                type="email"
-                class="border border-gray-200 rounded p-2 w-full"
-                name="email"
-                value="{{old('email')}}"
-            />
-            @error('email')
-            <p class="text-red-500 text-xs mt-1">
-                {{$message}}
-            </p>
-        @enderror
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4c">كلمة المرور</label>
+                          <input type="password" id="form3Example4c" class="form-control" name="password" />
+                          @error('password')
+                          <p class="text-red-500 text-xs mt-1">
+                              {{$message}}
+                          </p>
+                      @enderror
+                        </div>
+                      </div>
+                     <div    class=" d-flex justify-content-around ">
+                     <button style="font-size:20px" type="submit" class=" btn btn-primary w-25 btn-sm btn-block">سجل</button>
+                     
+                        <p class="pe-5 pt-3">
+                            ليس لديك حساب؟
+                            <a href="/register" class="text-laravel"
+                                >حساب جديد</a
+                            >
+                        </p>
+                    
+             
+  
+                    
+                    </div>
+  
+                  </form>
+                  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mb-6 text-end">
-            <label
-                for="password"
-                class="inline-block text-lg mb-2"
-            >
-                كلمة السر
-            </label>
-            <input
-                type="password"
-                class="border border-gray-200 rounded p-2 w-full"
-                name="password"
-            />
-            @error('password')
-            <p class="text-red-500 text-xs mt-1">
-                {{$message}}
-            </p>
-        @enderror
-        </div>
-
-
-        <div class="mb-6 text-end">
-            <button
-                type="submit"
-                class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
-            >
-                سجل
-            </button>
-        </div>
-
-        <div class="mt-8">
-            <p>
-                ليس لديك حساب؟
-                <a href="/register" class="text-laravel"
-                    >حساب جديد</a
-                >
-            </p>
-        </div>
-    </form>
-</div>
-@endsection
-
+      </div>
+    </div>
+  </section>
+    @endsection
+  
