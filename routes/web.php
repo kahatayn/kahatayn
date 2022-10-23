@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
 
 /*
@@ -85,8 +86,9 @@ Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('aut
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
 
 Route::get('admin/dashboard', function () {
-    return view('Dashboard.dashboard');
-})->middleware('can:admin');
+    return view('Dashboard.AddEventdashboard');
+});
+// ->middleware('can:admin');
 // //donation
 
 Route::get('donate', function () {
@@ -97,3 +99,10 @@ Route::get('visa', function () {
 });
 Route::get('donate', [DonationController::class, 'show']);
 Route::post('create', [DonationController::class, 'store']);
+
+
+//Events
+Route::get('/showEvents', [EventController::class, "show"])->name('showEvent');
+Route::post('/createEvent', [EventController::class, "store"])->name('createEvent');
+// Route::delete('/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
+// Route::get('update/{id}', [EventController::class, 'update'])->name('updateEvent');

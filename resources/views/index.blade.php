@@ -236,7 +236,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-white p-5">
-                        <form>
+                        <form >
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">

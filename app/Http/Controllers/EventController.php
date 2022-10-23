@@ -25,7 +25,6 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +35,29 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->image);
+        $request->validate(
+            [
+                'name' => 'required',
+                'description' => 'required',
+                'date' => 'required',
+                'image' => 'required|mimes:png,jpg,jpeg',
+                'location' => 'required',
+            ]
+        );
+
+
+        $image = base64_encode(file_get_contents($request->file('image')));
+        $event = Event::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'date' => $request->input('date'),
+            'image' =>   $image,
+            'location' => $request->input('location')
+        ]);
+
+        $event->save();
+        return redirect('/');
     }
 
     /**
@@ -47,7 +68,9 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        $events = Event::all();
+
+        return view('Dashboard.allEvents', ["events" => $events]);
     }
 
     /**
