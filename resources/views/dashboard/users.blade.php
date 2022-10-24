@@ -52,9 +52,36 @@
                                       <td>{{ $User['name'] }}</td>
                                       <td>{{ $User['phone'] }}</td>
                                       <td>{{ $User['email'] }}</td>
-                                      <td><a href="/deleteU/{{$User['id']}}" onclick="if(confirm('are you sure?')){
+                                      <td>
+                                        {{-- <a href="/deleteU/{{$User['id']}}" onclick="if(confirm('are you sure?')){
                                          document.getElementById('delete-form').submit()};" class="nav-link">
-                                         <i class="fas fa-trash-alt"></i></a></td>
+                                         <i class="fas fa-trash-alt"></i></a> --}}
+                                        
+                                        
+                                         <a  class="btn btn-danger" onclick="event.preventDefault()
+                                            Swal.fire({
+                                               title: 'هل انت متأكد؟',
+                                               text: 'لا يمكنك التراجع عن هذه العملية',
+                                               icon: 'warning',
+                                               showCancelButton: true,
+                                               confirmButtonColor: '#3085d6',
+                                               cancelButtonColor: '#d33',
+                                               cancelButtonText: 'الغاء',
+                                               confirmButtonText: 'نعم'
+                                             }).then((result) => {
+                                               if (result.isConfirmed) {
+                                                 Swal.fire(
+                                                   'حذف',
+                                                   'تم الحذف بنجاح',
+                                                   'success'
+                                                 ).then(window.location.href='/deleteU/{{$User['id']}}')
+                                               }
+                                             })
+                       
+                                             "><ion-icon name="trash-outline"></ion-icon></a>
+                                        
+                                        
+                                        </td>
                                     </tr>
                                     @endforeach
 
@@ -68,6 +95,8 @@
                     </div>
                   </div>
                 </div>
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
               </section>
             <!-- Chart End -->
             

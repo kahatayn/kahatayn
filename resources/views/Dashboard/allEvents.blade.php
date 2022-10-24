@@ -70,9 +70,33 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="delete/{{ $event->id }}">
-                                                <ion-icon name="trash-outline"></ion-icon>                                
-                                            </a>
+                                            <a  class="btn btn-danger" onclick="event.preventDefault()
+                                            Swal.fire({
+                                               title: 'هل انت متأكد؟',
+                                               text: 'لا يمكنك التراجع عن هذه العملية',
+                                               icon: 'warning',
+                                               showCancelButton: true,
+                                               confirmButtonColor: '#3085d6',
+                                               cancelButtonColor: '#d33',
+                                               cancelButtonText: 'الغاء',
+                                               confirmButtonText: 'نعم'
+                                             }).then((result) => {
+                                               if (result.isConfirmed) {
+                                                 Swal.fire(
+                                                   'حذف',
+                                                   'تم الحذف بنجاح',
+                                                   'success'
+                                                 ).then(window.location.href='delete/{{ $event->id }}')
+                                               }
+                                             })
+                       
+                                             "><ion-icon name="trash-outline"></ion-icon></a>
+
+
+
+
+
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -87,6 +111,8 @@
                     </div>
                   </div>
                 </div>
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
               </section>
 <!-- Table End -->
 
