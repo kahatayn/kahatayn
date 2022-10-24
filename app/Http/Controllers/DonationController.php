@@ -12,7 +12,8 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         $Donations = Donation::all();
         $data = [
             'name' => 'Donation',
@@ -31,7 +32,7 @@ class DonationController extends Controller
         //
     }
 
-   
+
     /**
      * Display the specified resource.
      *
@@ -40,10 +41,10 @@ class DonationController extends Controller
      */
     public function show()
     {
-     return view ('donate');
+        return view('donate');
     }
 
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -51,16 +52,15 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        $formfiled=  $request->validate(
+        $formfiled =  $request->validate(
             [
-                'name'=>['required','min:3'],
-                'email'=>['required','email'],
-                'amount'=>['required','numeric','min:1']
+                'name' => ['required', 'min:3'],
+                'email' => ['required', 'email'],
+                'amount' => ['required', 'numeric', 'min:1']
             ]
-            );
-            Donation :: create($formfiled);
-            return redirect('/');
-
+        );
+        Donation::create($formfiled);
+        return redirect('/');
     }
 
     /**
@@ -95,5 +95,11 @@ class DonationController extends Controller
     public function destroy(Donation $donation)
     {
         //
+    }
+
+    public function view()
+    {
+        $allDonations = Donation::all();
+        return view('dashboard.index', ['allDonations' => $allDonations]);
     }
 }

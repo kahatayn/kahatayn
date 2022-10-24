@@ -98,13 +98,14 @@ Route::post('create', [DonationController::class, 'store']);
 
 //Dashboard
 
-Route::get('dashboard', function () {
-    return view('dashboard.index');
-});
+// Route::get('dashboard', function () {
+//     return view('dashboard.index');
+// });
 
-Route::get('users', function () {
-    return view('dashboard.users');
-});
+Route::get('dashboard', [DonationController::class, 'view']);
+
+Route::get('users', [UserController::class, 'view']);
+
 
 Route::get('admin', function () {
     return view('dashboard.admin');
@@ -113,4 +114,3 @@ Route::get('admin', function () {
 Route::get('events', function () {
     return view('dashboard.events');
 });
-
