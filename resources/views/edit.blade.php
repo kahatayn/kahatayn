@@ -11,7 +11,6 @@ data-wow-delay="0.1s"
   </h1>
 </div>
 </div>
-
 <form action="/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
     @csrf
 {{-- @method('PUT') --}}
@@ -44,9 +43,9 @@ data-wow-delay="0.1s"
         
         </div>
         
-        <div class="col-lg-8">
+        <div class="col-lg-8 ">
           <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body p-2">
                 <div class="mb-6 text-end">
                     <div class="mb-6 text-end">
                         <label for="name" class="inline-block text-lg  mb-2">
@@ -124,34 +123,7 @@ data-wow-delay="0.1s"
         </div>
       </div>
     </div>
-    {{-- events section --}}
-        {{-- <div class="container h-100">
-          <div class="row d-flex flex-wrap justify-content-center align-items-center ">
-            
-            @foreach ($events as $event)
-              <div class="card m-3" style="border-radius: 15px;
-              width:35rem;">
-                <div class="card-body p-4">
-                  <h3 class="mb-3">{{ $event->name }}</h3>
-                  <p class="small mb-0"><i class="fas fa-star fa-lg text-warning"></i> <span class="mx-2">|</span>
-                    عام <span class="mx-2">|</span> الفعالية في  <strong>{{ $event->location }}</strong> بتاريخ : {{ explode(' ',$event->date)[0] }}
-                  </p>
-                  <hr class="my-4"> --}}
-                  {{-- <div class="d-flex justify-content-start align-items-center">
-                    <p class="mb-0 text-uppercase"><i class="fas fa-cog me-2"></i> <span
-                        class="text-muted small">settings</span></p>
-                    <p class="mb-0 text-uppercase"><i class="fas fa-link ms-4 me-2"></i> <span
-                        class="text-muted small">program link</span></p>
-                    <p class="mb-0 text-uppercase"><i class="fas fa-ellipsis-h ms-4 me-2"></i> <span
-                        class="text-muted small">program link</span>
-                        
-                  </div> --}}
-                  {{-- <div class="widget-49-meeting-action">
-                    <a href="#" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
-                </div> --}}
-              {{-- </div>
-            </div>
-            @endforeach --}}
+    
           </div>
         </div>
 
