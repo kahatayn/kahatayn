@@ -39,16 +39,25 @@ class DonationController extends Controller
      * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
+
+        // dd($request->name);
+        if ($request !== null) {
+            return view(
+                'donate',
+                [
+                    'fields' => $request
+                ]
+            );
+        }
         return view('donate');
     }
 
-    public function showVisa()
+    public function showWithGet()
     {
-        return view('visa');
+        return view('donate');
     }
-
     /**
      * Store a newly created resource in storage.
      *

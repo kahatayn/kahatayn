@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,67 +113,43 @@
             <!-- Navbar End -->
 
 
-            
-            
-
-            <!-- Sale & Revenue Start -->
+            {{-- Add Events form --}}
             
 
+{{-- Create event --}}	
+{{-- name	image	date	location	 description --}}
+<div style="display:flex;width:100%;" class="m-4">
+    <form action="/updatedEvent/{{ $id }}" method="post" class="eventInfo" enctype="multipart/form-data">
+        @csrf
+        <div style="width:100%;">
+            <p>NAME</p>
+            <input name="name" type="text" value="{{ $event->name }}" autofocus>
+        </div>
+        <div style="width:100%;">
+            <p>DESCRIPTION</p>
+            <input name="description" type="text" value="{{ $event->description }}">
+        </div>
 
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($allDonations as $Donation )
-                                    <tr>
-                                      <td>{{ $Donation['id'] }}</td>
-                                      <td>{{ $Donation['name'] }}</td>
-                                      <td>{{ $Donation['card'] }}</td>
-                                      <td>{{ $Donation['date'] }}</td>
-                                      <td>{{ $Donation['amount'] }}</td>
-                                    </tr>
-                                    @endforeach
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
+        
+        <div style="width:47%;">
+            <p>DATE</p>
+            <input name="date" type="date" value="{{ $event->date }}">
+        </div>
+        <div style="width:47%;margin-left:6%">
+            <p>LOCATION</p>
+            <input name="location" type="text" value="{{ $event->location }}">
+        </div>
+        <div style="width:100%;">
+            <p>IMAGE</p>
+            <input name="image" type="file">
+        </div>
+        <p>
+        <button type="submit" class="btn ">Update</button>
+        <a href="/events" class="btn">Cancel</a>
+        </p>
+    </form> 
+</div>
 
-
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-
-                    <div class="col-sm-12 col-md-6 col-xl-12">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Widgets End -->
 
 
            {{-- footer start --}}

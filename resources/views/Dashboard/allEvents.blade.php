@@ -106,68 +106,63 @@
             <!-- Navbar End -->
 
 
-            
-            
+            {{-- Events table --}}
+            <a href="{{ route('addEvent') }} " class=" m-2">
+                <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/xzksbhzh.json"
+                    trigger="hover"
+                    colors="primary:#ff6f0f,secondary:#ebe6ef"
+                    style="width:80px;height:80px">
+                </lord-icon></a>
+    
+    <div class="col-12">
+        <div class=" rounded h-100 p-4">
+            <h6 class="mb-4">Responsive Table</h6>
+            <div class="table bg-light ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"> Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
 
-            <!-- Sale & Revenue Start -->
-            
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($allDonations as $Donation )
-                                    <tr>
-                                      <td>{{ $Donation['id'] }}</td>
-                                      <td>{{ $Donation['name'] }}</td>
-                                      <td>{{ $Donation['card'] }}</td>
-                                      <td>{{ $Donation['date'] }}</td>
-                                      <td>{{ $Donation['amount'] }}</td>
-                                    </tr>
-                                    @endforeach
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        @foreach ($events as $event)
+                        <tr>
+                            <th scope="row">{{ $event->id }}</th>
+                            <td>{{ $event->name }}</td>
+                            <td>{{ $event->description }}</td>
+                            <td>{{ $event->location }}</td>
+                            <td>{{ explode(' ',$event->date)[0]  }}</td>
+                            <td>
+                                <a href="update/{{ $event->id }}">
+                                    <ion-icon name="create-outline" style="color: green"></ion-icon>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="delete/{{ $event->id }}">
+                                    <ion-icon name="trash-outline"></ion-icon>                                
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <!-- Recent Sales End -->
-
-
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-
-                    <div class="col-sm-12 col-md-6 col-xl-12">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Widgets End -->
-
+        </div>
+    </div>
+</div>
+</div>
+<!-- Table End -->
 
            {{-- footer start --}}
            @include('dashboard.adds.footer');

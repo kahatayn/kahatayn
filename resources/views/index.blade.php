@@ -1,6 +1,6 @@
 @extends('master')
-<body>
 
+  
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -63,7 +63,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </div></div>
     <!-- Carousel End -->
 
 
@@ -119,7 +119,7 @@
                     <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
                         <div class="text-center p-4 pt-0">
                             <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>{{ $event->date }}</small>
+                                <small>{{ explode(' ',$event->date)[0] }}</small>
                             </div>
                             <h5 class="mb-3">{{ $event->name }}</h5>
                             <p>
@@ -138,9 +138,9 @@
                             </div>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/school.jpg" alt="">
+                            <img class="img-fluid" src="data:image/jpeg;base64,{{ $event->image }}" alt="">
                             <div class="causes-overlay">
-                                <a class="btn btn-outline-primary" href="donate.html">
+                                <a class="btn btn-outline-primary" href="/eventDescription/{{ $event->id }}">
                                     تبرع الأن
                                     <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                         <i class="fa fa-arrow-left"></i>
@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-white p-5">
-                        <form>
+                        <form >
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
@@ -194,13 +194,13 @@
                                 <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
                                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-                                        <label class="btn btn-light py-3" for="btnradio1">$15</label>
+                                        <label class="btn btn-light py-3" for="btnradio1">15JD</label>
 
                                         <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                        <label class="btn btn-light py-3" for="btnradio2">$20</label>
+                                        <label class="btn btn-light py-3" for="btnradio2">20JD</label>
 
                                         <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-                                        <label class="btn btn-light py-3" for="btnradio3">$30</label>
+                                        <label class="btn btn-light py-3" for="btnradio3">30JD</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -288,7 +288,3 @@
 
 
     <!-- JavaScript Libraries -->
-
-</body>
-
-</html>
