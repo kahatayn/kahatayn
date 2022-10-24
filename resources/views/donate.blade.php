@@ -55,7 +55,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
     
                                             <input type="text" 
-                                            class="form-control bg-light border-0"
+                                            
+                                            class="form-control   border-0"
                                              id="name" name="name"
                                              value="<?php  if(isset($fields->name)) echo $fields->name ?>"           
                                                placeholder="Your Name">
@@ -71,7 +72,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="email" 
-                                            class="form-control bg-light border-0"
+                                            class="form-control   border-0"
                                              id="email" name="email"
                                              value="<?php  if(isset($fields->email)) echo $fields->email ?>"
                                              placeholder="Your Email">
@@ -87,7 +88,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     {{-- /////////////////////////// --}}
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control bg-light border-0 card-number-input" id="card"
+                                            <input type="text" class="form-control   border-0 card-number-input" id="card"
                                              name="card"
                                              value="{{old('card')}}"
                                              placeholder="Your card">
@@ -103,7 +104,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     <div class="col-12">
                                         <div class="form-floating ">
                                             <input type="text" 
-                                            class="form-control bg-light border-0 card-holder-input"
+                                            class="form-control   border-0 card-holder-input"
                                              id="card-holder" name="card-holder"
                                              value="{{old('card-holder')}}"
 
@@ -162,7 +163,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     {{-- //////////////////////////////// --}}
                                   
                                     <div class="form-floating">
-                                        <input type="number" name="amount" class="form-control bg-light border-0"
+                                        <input type="number" name="amount" class="form-control   border-0"
                                           placeholder="Enter the amount to be donated"
                                            value="<?php  if(isset($fields->amount)) echo $fields->amount ?>">
                                         <label name="amount">مقدار التبرع</label>
@@ -224,132 +225,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                 </div>
                         
                             </div>
-
-                        {{-- form start --}}
-                            {{-- <form action=""> --}}
-                                
-                                {{-- <div class="inputBox">
-                                    <span>card number</span>
-                                    <input type="text" maxlength="16" class="card-number-input">
-                                </div>
-                                <div class="inputBox">
-                                    <span>card number</span>
-                                    <input type="text" maxlength="16" class="card-number-input">
-                                </div>
-                                <div class="inputBox">
-                                    <span>card holder</span>
-                                    <input type="text" class="card-holder-input">
-                                </div>
-                                <div class="flexbox">
-                                    <div class="inputBox">
-                                        <span>expiration mm</span>
-                                        <select name="" id="" class="month-input">
-                                            <option value="month" selected disabled>month</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
-                                    <div class="inputBox">
-                                        <span>expiration yy</span>
-                                        <select name="" id="" class="year-input">
-                                            <option value="year" selected disabled>year</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2029">2029</option>
-                                            <option value="2030">2030</option>
-                                        </select>
-                                    </div>
-                                    <div class="inputBox">
-                                        <span>cvv</span>
-                                        <input type="text" maxlength="4" class="cvv-input">
-                                    </div>
-                                </div>
-                                <input type="submit" value="submit" class="submit-btn">
-                                 --}}
-
-                                {{-- <div class="row g-5 align-items-center"> --}}
-                    
-                    
- 
-                                    {{-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                        <div class="h-100 bg-secondary p-5">
-                                            <form action = "/donate/details" method = "post">
-                    @csrf
-                                                <div class="row g-3">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                        <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-                    
-                                                            <input type="text" class="form-control bg-light border-0" id="name" name="name" placeholder="Your Name">
-                                                            <label for="name">الاسم</label>
-                                                        </div>
-                                                        @error('name')
-                                                        <p class="text-danger text-end text-xs mt-1">
-                                                            {{$message}}
-                                                        </p>
-                                                    @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <input type="email" class="form-control bg-light border-0" id="email" name="email"placeholder="Your Email">
-                                                            <label for="email">الايميل</label>
-                                                        </div>
-                                                        @error('email')
-                                                        <p class="text-danger text-end text-xs mt-1">
-                                                            {{$message}}
-                                                        </p>
-                                                    @enderror
-                                                    </div>
-                                                  
-                                                    <div class="form-floating">
-                                                        <input type="number" name="amount" class="form-control bg-light border-0"  placeholder="Enter the amount to be donated">
-                                                        <label name="amount">مقدار التبرع</label>
-                
-                                                        @error('amount')
-                                                        <p class="text-danger text-end text-xs mt-1">
-                                                            {{$message}}
-                                                        </p>
-                                                    @enderror
-                                                    </div>
-                    
-                                                    <div class="col-12 ">
-                                                        <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
-                                                            تبرع الآن
-                                                            <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                                                <i class="fa fa-arrow-left"></i>
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                
-                            </form> --}}
-                        
-                        {{-- </div>     --}}
-                            
-                        
-                        
-                        
-                        
-                        
                         <script>
                         
                         document.querySelector('.card-number-input').oninput = () =>{
