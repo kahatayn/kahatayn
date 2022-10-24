@@ -25,7 +25,7 @@
               <h5 class="my-3">{{ $user->name }}</h5>
               <p class="text-muted mb-1">متطوع</p>
               <br>
-              <a href="{{url('edit/'.$user['id'])}}" class="btn btn-info">Edit</a>
+              <a href="{{url('edit/'.$user['id'])}}" class="btn btn-info">تعديل</a>
               {{-- <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure?')" >Delete</a> --}}
 
             </div>
@@ -95,7 +95,27 @@
                   <hr class="my-4">
                   <div class="widget-49-meeting-action">
                     <a href="eventDescription/{{ $event->id }}" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
-                    <a href="/deleteev/{{$event->id}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">delete</a>
+                    <a  class="btn btn-danger" onclick="event.preventDefault()
+                     Swal.fire({
+                        title: 'هل انت متأكد؟',
+                        text: 'لا يمكنك التراجع عن هذه العملية',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        cancelButtonText: 'الغاء',
+                        confirmButtonText: 'نعم'
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire(
+                            'حذف',
+                            'تم الحذف بنجاح',
+                            'success'
+                          ).then(window.location.href='/deleteev/{{$event->id}}')
+                        }
+                      })
+
+                      ">حذف</a>
 
                 </div>
               </div>
@@ -104,7 +124,9 @@
           </div>
         </div>
 
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   </section>
 
 @endsection
+
