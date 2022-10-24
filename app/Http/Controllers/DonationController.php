@@ -12,7 +12,8 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         $Donations = Donation::all();
         $data = [
             'name' => 'Donation',
@@ -31,24 +32,33 @@ class DonationController extends Controller
         //
     }
 
-   
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
-     return view ('donate');
+
+        // dd($request->name);
+        if ($request !== null) {
+            return view(
+                'donate',
+                [
+                    'fields' => $request
+                ]
+            );
+        }
+        return view('donate');
     }
 
-    public function showVisa()
+    public function showWithGet()
     {
-     return view ('visa');
+        return view('donate');
     }
-
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -56,19 +66,18 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        $formfiled=  $request->validate(
+        $formfiled =  $request->validate(
             [
-                'name'=>['required','min:3'],
-                'email'=>['required','email'],
-                'amount'=>['required','numeric','min:1'],
-                'card'=>['required','numeric','min:16']
+                'name' => ['required', 'min:3'],
+                'email' => ['required', 'email'],
+                'amount' => ['required', 'numeric', 'min:1'],
+                'card' => ['required', 'numeric', 'min:16']
             ]
-            );
-     
-            //store data -> ask for visa if true create record else redirect back
-            Donation :: create($formfiled);
-            return redirect('/');
+        );
 
+        //store data -> ask for visa if true create record else redirect back
+        Donation::create($formfiled);
+        return redirect('/');
     }
 
     /**
@@ -103,5 +112,11 @@ class DonationController extends Controller
     public function destroy(Donation $donation)
     {
         //
+    }
+
+    public function view()
+    {
+        $allDonations = Donation::all();
+        return view('dashboard.index', ['allDonations' => $allDonations]);
     }
 }

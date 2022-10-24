@@ -48,7 +48,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="h-100 bg-secondary p-5">
                             <form action = "/donate/details" method = "post">
-    @csrf
+                              @csrf
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <div class="form-floating">
@@ -57,7 +57,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                             <input type="text"
                                             class="form-control bg-light border-0"
                                              id="name" name="name"
-                                             value="{{old('name')}}"
+                                             value="<?php  if(isset($fields->name)) echo $fields->name ?>"
                                                placeholder="Your Name">
 
                                             <label for="name">الاسم</label>
@@ -73,9 +73,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                             <input type="email"
                                             class="form-control bg-light border-0"
                                              id="email" name="email"
-                                             value="{{old('email')}}"
+                                             value="<?php  if(isset($fields->email)) echo $fields->email ?>"
                                              placeholder="Your Email">
-                                            <label for="email">الايميل</label>
+                                            <label for="email">البريد الالكتروني</label>
                                         </div>
                                         @error('email')
                                         <p class="text-danger text-end text-xs mt-1">
@@ -162,7 +162,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     {{-- //////////////////////////////// --}}
 
                                     <div class="form-floating">
-                                        <input type="number" name="amount" class="form-control bg-light border-0"  placeholder="Enter the amount to be donated">
+                                        <input type="number" name="amount" class="form-control bg-light border-0"
+                                          placeholder="Enter the amount to be donated"
+                                           value="<?php  if(isset($fields->amount)) echo $fields->amount ?>">
                                         <label name="amount">مقدار التبرع</label>
 
                                         @error('amount')
@@ -176,7 +178,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
                                             تبرع الآن
                                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                                <i class="fa fa-arrow-right"></i>
+                                                <i class="fa fa-arrow-left"></i>
                                             </div>
                                         </button>
                                     </div>
@@ -330,7 +332,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                                         <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
                                                             تبرع الآن
                                                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                                                <i class="fa fa-arrow-right"></i>
+                                                                <i class="fa fa-arrow-left"></i>
                                                             </div>
                                                         </button>
                                                     </div>

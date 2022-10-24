@@ -29,3 +29,4 @@
 
 <!-- Template Stylesheet -->
 <link href="{{ asset('dash/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('dash/css/table.css') }}" rel="stylesheet">
