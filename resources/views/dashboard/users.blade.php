@@ -126,6 +126,7 @@
                                       <th scope="col">NAME</th>
                                       <th scope="col">PHOME</th>
                                       <th scope="col">EMAIL</th>
+                                      <th scope="col">DELETE</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -136,6 +137,7 @@
                                       <td>{{ $User['name'] }}</td>
                                       <td>{{ $User['phone'] }}</td>
                                       <td>{{ $User['email'] }}</td>
+                                      <td><a href="/deleteU/{{$User['id']}}"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                     @endforeach
 

@@ -77,7 +77,7 @@
                   <div
                     class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2"
                   >
-                    <i class="fa fa-arrow-right"></i>
+                    <i class="fa fa-arrow-left"></i>
                   </div>
                 </a>
               </div>

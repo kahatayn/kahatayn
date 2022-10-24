@@ -87,35 +87,47 @@ Route::get(
 // Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
-Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 //REGISTER WITH GITHUB
-Route::get('/register/github',
-[VolunteerController :: class,'github'])->middleware('guest');
+Route::get(
+    '/register/github',
+    [VolunteerController::class, 'github']
+)->middleware('guest');
 
 
 //REGISTER WITH GITHUB// redirect
-Route::get('/register/github/redirect',
-[VolunteerController :: class,'githubRedirect'])->middleware('guest');
+Route::get(
+    '/register/github/redirect',
+    [VolunteerController::class, 'githubRedirect']
+)->middleware('guest');
 
 
 //REGISTER WITH google
-Route::get('/register/google',
-[VolunteerController :: class,'google'])->middleware('guest');
+Route::get(
+    '/register/google',
+    [VolunteerController::class, 'google']
+)->middleware('guest');
 
 
 //REGISTER WITH google// redirect
-Route::get('/register/google/redirect',
-[VolunteerController :: class,'googleRedirect'])->middleware('guest');
+Route::get(
+    '/register/google/redirect',
+    [VolunteerController::class, 'googleRedirect']
+)->middleware('guest');
 
 //REGISTER WITH facebook
-Route::get('/register/facebook',
-[VolunteerController :: class,'facebook'])->middleware('guest');
+Route::get(
+    '/register/facebook',
+    [VolunteerController::class, 'facebook']
+)->middleware('guest');
 
 
 //REGISTER WITH facebook// redirect
-Route::get('/register/facebook/redirect',
-[VolunteerController :: class,'facebookRedirect'])->middleware('guest');
+Route::get(
+    '/register/facebook/redirect',
+    [VolunteerController::class, 'facebookRedirect']
+)->middleware('guest');
 
 
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
@@ -152,6 +164,7 @@ Route::get('dashboard', [DonationController::class, 'view']);
 
 Route::get('users', [UserController::class, 'view']);
 
+Route::get('deleteU/{id}', [UserController::class, 'destroy']);
 
 Route::get('admin', function () {
     return view('dashboard.admin');

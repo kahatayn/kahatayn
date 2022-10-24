@@ -31,8 +31,11 @@ class UserController extends Controller
         return view('dashboard.users', ['allUsers' => $allUsers]);
     }
 
-    public function destroy(User $User)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->delete();
+        return redirect('/users');
     }
 }

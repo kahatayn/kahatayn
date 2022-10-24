@@ -27,13 +27,13 @@
                     <a class="btn btn-primary py-2 px-3 me-3" href="">
                         تبرع الآن
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
+                            <i class="fa fa-arrow-left"></i>
                         </div>
                     </a>
                     <a class="btn btn-outline-primary py-2 px-3" href="/register">
                         التسجيل كمتطوع
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
+                            <i class="fa fa-arrow-left"></i>
                         </div>
                     </a>
                 </div>

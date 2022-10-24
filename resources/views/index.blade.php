@@ -20,7 +20,7 @@
                                     <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
                                         كن شريكا
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <i class="fa fa-arrow-left"></i>
                                         </div>
                                     </a>
                                 </div>
@@ -43,7 +43,7 @@
 
                                         تبرع الان
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <i class="fa fa-arrow-left"></i>
                                         </div>
                                     </a>
                                 </div>
@@ -89,13 +89,13 @@
                         <a class="btn btn-primary py-2 px-3 me-3" href="about.html">
                             اقرأ المزيد
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-arrow-left"></i>
                             </div>
                         </a>
                         <a class="btn btn-outline-primary py-2 px-3" href="contact.html">
                             تواصل معنا
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-arrow-left"></i>
                             </div>
                         </a>
                     </div>
@@ -143,7 +143,7 @@
                                 <a class="btn btn-outline-primary" href="donate.html">
                                     تبرع الأن
                                     <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                        <i class="fa fa-arrow-right"></i>
+                                        <i class="fa fa-arrow-left"></i>
                                     </div>
                                 </a>
                             </div>
@@ -207,7 +207,7 @@
                                     <button  class="btn btn-primary px-5" style="height: 60px;">
                                         تبرع الان
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <i class="fa fa-arrow-left"></i>
                                         </div>
                                     </button>
                                 </div>
@@ -236,7 +236,7 @@
                         <!-- <a class="btn btn-outline-primary px-3" href="">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-arrow-left"></i>
                             </div>
                         </a> -->
                     </div>
@@ -249,7 +249,7 @@
                         <!-- <a class="btn btn-outline-primary px-3" href="">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-arrow-left"></i>
                             </div>
                         </a> -->
                     </div>
