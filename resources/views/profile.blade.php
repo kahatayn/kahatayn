@@ -83,9 +83,11 @@
           <div class="row d-flex flex-wrap justify-content-center align-items-center ">
 
             @foreach ($events as $event)
+
               <div class="card m-3" style="border-radius: 15px;
               width:35rem;">
                 <div class="card-body p-4">
+
                   <h3 class="mb-3">{{ $event->name }}</h3>
                   <p class="small mb-0"><i class="fas fa-star fa-lg text-warning"></i> <span class="mx-2">|</span>
                     عام <span class="mx-2">|</span> الفعالية في  <strong>{{ $event->location }}</strong> بتاريخ : {{ explode(' ',$event->date)[0] }}
@@ -93,6 +95,8 @@
                   <hr class="my-4">
                   <div class="widget-49-meeting-action">
                     <a href="eventDescription/{{ $event->id }}" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
+                    <a href="{{url('delete/'.$event['id'])}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">delete</a>
+
                 </div>
               </div>
             </div>

@@ -198,3 +198,5 @@ Route::get('admin/dashboard/add_event', function () {
 // //chatbot
 // Route::get('/botman',[BotManController::class, 'show'] );
 // Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
+
+Route::get('deleteev/{id}', [VolunteerController::class, 'destroy']);

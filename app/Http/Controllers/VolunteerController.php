@@ -211,9 +211,13 @@ class VolunteerController extends Controller
      * @param  \App\Models\volunteer  $volunteer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(volunteer $volunteer)
+    public function destroy($id)
     {
         //
+        $ev = event::find($id);
+        $ev->delete();
+        return redirect('index');
+        
     }
 
     //////////////
