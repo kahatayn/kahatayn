@@ -49,6 +49,11 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+
+Route::get('login', [VolunteerController::class, 'login'])->name('login');
+Route::post('custom-login', [VolunteerController::class, 'volunteers'])->name('volunteers');
+Route::get('volunteers', [VolunteerController::class, 'index'])->name('volunteers');
+Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 Route::get('/contact', function () {
     return view('contact');
 });
