@@ -75,8 +75,8 @@
               <div style="width:490px;height:300px"><img class="img-fluid" src="data:image/jpeg;base64,{{ $event->image }}" alt=""></div>
               <div class="causes-overlay">
                   <a class="btn btn-outline-primary" href="/eventDescription/{{ $event->id }}">
-                      تبرع الأن
-                      <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+قراءة المزيد
+<div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                           <i class="fa fa-arrow-left"></i>
                       </div>
                   </a>
