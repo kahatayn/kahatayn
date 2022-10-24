@@ -31,4 +31,22 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github'=>[
+        'client_id'=> env(key: 'GITHUB_CLIENT_ID'),
+        'client_secret'=> env(key: 'GITHUB_CLIENT_SECRET'),
+        'redirect'=> env(key: 'GITHUB_REDIRECT_URL')
+    ],
+
+    'google'=>[
+        'client_id'=> env(key: 'GOOGLE_CLIENT_ID'),
+        'client_secret'=> env(key: 'GOOGLE_CLIENT_SECRET'),
+        'redirect'=> env(key: 'GOOGLE_REDIRECT_URL')
+    ],
+
+    'facebook'=>[
+        'client_id'=> env(key: 'FACEBOOK_CLIENT_ID'),
+        'client_secret'=> env(key: 'FACEBOOK_CLIENT_SECRET'),
+        'redirect'=> env(key: 'FACEBOOK_REDIRECT_URL')
+    ],
+
 ];
