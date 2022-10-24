@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
+use App\Models\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ use App\Http\Controllers\VolunteerController;
 // new route => new controller method => new view
 
 Route::get('/', function () {
-    return view('index');
+    $allEvent = Event::all();
+    return view('index', ['events' => $allEvent]);
 });
 
 Route::get('about', function () {
@@ -49,6 +51,9 @@ Route::get('/profile', function () {
 
 Route::get('/contact', function () {
     return view('contact');
+});
+Route::get('/about', function () {
+    return view('about');
 });
 
 ###########
@@ -104,6 +109,11 @@ Route::post('/createEvent', [EventController::class, "store"])->name('createEven
 Route::get('delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
 Route::get('update/{id}', [EventController::class, 'update'])->name('updateEvent');
 Route::post('/updatedEvent/{id}', [EventController::class, 'updateEvent']);
+
+Route::get('edit/{id}', [VolunteerController::class, 'edit']);
+Route::post('update/{id}',  [VolunteerController::class, 'update']);
+
+
 //Dashboard
 
 Route::get('dashboard', function () {
