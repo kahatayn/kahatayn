@@ -166,9 +166,12 @@ Route::post('update/{id}',  [VolunteerController::class, 'update']);
 
 //Dashboard
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('can:admin');;
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// })->middleware('can:admin');
+
+Route::get('/dashboard', [DonationController::class, 'view'])->middleware('can:admin');
+Route::get('/users', [UserController::class, 'view'])->middleware('can:admin');
 
 Route::get('deleteU/{id}', [UserController::class, 'destroy']);
 

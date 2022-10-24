@@ -114,25 +114,28 @@
 
 
             <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($allDonations as $Donation )
+            <section class="intro">
+                <div class="bg-image h-100" style="background-color: #f5f7fa;">
+                  <div class="mask d-flex align-items-center h-100">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="card">
+                            <div class="card-body p-0">
+                              <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                                <table class="table table-striped mb-0">
+                                  <thead style="background-color: #ff6f0f;">
+                                    <tr>
+                                      <th scope="col">ID</th>
+                                      <th scope="col">NAME</th>
+                                      <th scope="col">CARD</th>
+                                      <th scope="col">DATE</th>
+                                      <th scope="col">AMOUNT</th>
+                                      
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    @foreach ($allDonations as $Donation )
                                     <tr>
                                       <td>{{ $Donation['id'] }}</td>
                                       <td>{{ $Donation['name'] }}</td>
@@ -141,13 +144,19 @@
                                       <td>{{ $Donation['amount'] }}</td>
                                     </tr>
                                     @endforeach
-                                
-                            </tbody>
-                        </table>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <!-- Recent Sales End -->
+              </section>
+            <!-- Chart End -->
+
 
 
             <!-- Widgets Start -->

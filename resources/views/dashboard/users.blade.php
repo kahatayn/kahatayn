@@ -8,7 +8,7 @@
 
 
 <body>
-    
+
 
         <!-- Sidebar Start -->
         @include('dashboard.adds.sidebar');
@@ -137,7 +137,9 @@
                                       <td>{{ $User['name'] }}</td>
                                       <td>{{ $User['phone'] }}</td>
                                       <td>{{ $User['email'] }}</td>
-                                      <td><a href="/deleteU/{{$User['id']}}"><i class="fas fa-trash-alt"></i></a></td>
+                                      <td><a href="/deleteU/{{$User['id']}}" onclick="if(confirm('are you sure?')){
+                                         document.getElementById('delete-form').submit()};" class="nav-link">
+                                         <i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                     @endforeach
 

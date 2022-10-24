@@ -4,14 +4,15 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-4">
                 <img src="{{ asset('img/hand.png') }}" alt="" style="width:60%; height:auto;">
-                <p>نص</p>
+                <p>نسعى الى تحسين حياة الأيتام وأسرهم من خلال منظومة متكاملة من البرامج الاجتماعية والتنموية 
+                    والشراكات النوعية للمساهمة في تمكينهم وتعزيز دورهم المجتمعي</p>
 
             </div>
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">العنوان</h5>
-                <p><i class="fa fa-map-marker-alt me-3"></i>الاردن</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <h5 class="text-light mb-4">معلومات التواصل</h5>
+                <p>الاردن<i class="fa fa-map-marker-alt me-3"></i></p>
+                <p>+962 777666555<i class="fa fa-phone-alt me-3"></i></p>
+                <p>info@kahatayn.jo<i class="fa fa-envelope me-3"></i></p>
             </div>
 
     <div class="container-fluid copyright">
