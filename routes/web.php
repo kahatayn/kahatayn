@@ -53,7 +53,7 @@ Route::get('/profile', function () {
 Route::get('login', [VolunteerController::class, 'login'])->name('login');
 Route::post('custom-login', [VolunteerController::class, 'volunteers'])->name('volunteers');
 Route::get('volunteers', [VolunteerController::class, 'index'])->name('volunteers');
-Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+// Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -87,7 +87,7 @@ Route::get(
 )->name('login')->middleware('guest');
 
 // //login user
-Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
+// Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);
 
 //REGISTER WITH GITHUB
 Route::get(
@@ -166,7 +166,7 @@ Route::post('update/{id}',  [VolunteerController::class, 'update']);
 
 //Dashboard
 
-Route::get('dashboard', function () {
+Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('can:admin');;
 
