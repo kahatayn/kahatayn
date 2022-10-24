@@ -15,7 +15,9 @@
 - Ahmad Aalawneh
 - Ahmad Zahran
 
-## Mockup and Wireframe [link]
+## Mockup and Wireframe [link](https://github.com/kahatayn/kahatayn/files/9855130/Untitled_compressed.pdf)
+ 
+
 
 ## Trello [link](https://trello.com/b/XWL1XPNl/charity-services-project)
 
