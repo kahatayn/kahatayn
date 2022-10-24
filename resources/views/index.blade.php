@@ -1,6 +1,6 @@
 @extends('master')
 
-  
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -17,7 +17,7 @@
                                     <!-- <p class="fs-5 text-white-50 mb-5 animated slideInDown">لا شيء يعادل ابتسامة طفل وعيون لامعه ونظرة متفائلة الى المستقبل</p> -->
                                     <br>
                                     <br>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="profile">
                                         كن شريكا
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                             <i class="fa fa-arrow-left"></i>
@@ -38,10 +38,8 @@
                                     <!-- <p class="fs-5 text-white-50 mb-5 animated slideInDown">أكفل يتيم ب 15 دينار شهرياً</p> -->
                                     <br>
                                     <br>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-                                        أكفل يتيم ب 15 دينار شهرياً
-
-                                        تبرع الان
+                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="donateshow">
+                                        ساهم في إسعاد الأيتام
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                             <i class="fa fa-arrow-left"></i>
                                         </div>
@@ -74,7 +72,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
                         <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/team.jpg" alt="" style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-warning ps-2 pb-2 " src="img/hand.png" alt="" style="width: 200px; height: 200px;" >
+                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2 " src="img/pexels.jpg" alt="" style="width: 200px; height: 200px;" >
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -86,13 +84,13 @@
                             <!-- <span class="text-primary">Jhon Doe, Founder</span> -->
                         </div>
                         <p class="mb-5">نحن منظمة غير حكومية ولا ننتمي لجهة معينة. نحترم جميع الأديان والثقافات ونعمل مع شركاء موثوقين في الأماكن التي يمكننا المساهمة فيها في التنمية الاجتماعية.</p>
-                        <a class="btn btn-primary py-2 px-3 me-3" href="about.html">
+                        <a class="btn btn-primary py-2 px-3 me-3" href="about">
                             اقرأ المزيد
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                 <i class="fa fa-arrow-left"></i>
                             </div>
                         </a>
-                        <a class="btn btn-outline-primary py-2 px-3" href="contact.html">
+                        <a class="btn btn-outline-primary py-2 px-3" href="contact">
                             تواصل معنا
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-left"></i>
@@ -151,15 +149,15 @@
                     </div>
                 </div>
 @endforeach
-             
-                
+
+
             </div>
         </div>
     </div>
 
-   
-  
-   
+
+
+
     <!-- Causes End -->
 
 
@@ -167,7 +165,8 @@
 
 
     <!-- Donate Start -->
-    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="public\img\test.jpg">
+    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="img/team.jpg">
+
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
