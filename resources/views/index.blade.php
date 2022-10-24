@@ -114,17 +114,17 @@
                 <h6 class="display-6 mb-5">من خلال شراكتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم</h6>
             </div>
             <div class="row g-4 justify-content-center">
+                @foreach ($events->take(3) as $event)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
                         <div class="text-center p-4 pt-0">
                             <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>مع جيل المستقبل</small>
+                                <small>{{ $event->date }}</small>
                             </div>
-                            <h5 class="mb-3">نقوم بتأمين الحقيبة المدرسية لليتيم بكامل محتوياتها وبجودة عالية</h5>
-                            <p>يسهم هذا المشروع في توفير :
-                                الحقيبة الدراسية ، والأدوات التعليمية.
-                                ساهم بما تجود به نفسك
-                            </p>
+                            <h5 class="mb-3">{{ $event->name }}</h5>
+                            <p>
+                                {{ $event->location }}
+                              </p>
                             <div class="causes-progress bg-light p-3 pt-2">
                                 <div class="d-flex justify-content-between">
                                     <p class="text-dark">$1,934 <small class="text-body">المبلغ الحالي</small></p>
@@ -150,75 +150,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>نطعِعُمهم</small>
-                            </div>
-                            <h5 class="mb-3">قال تعالى( وَيُطْعِمُونَ الطَّعَامَ عَلَى حُبِّهِ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا )﻿</h5>
-                            <p>قم بالمساهمة في تخفيف عن أسرة اليتيم وتحسين جودة حياتهم بالمساهمة في توفير السلة الغذائية لتلبية احتياجات اليتيم اليومية </p>
-                            <div class="causes-progress bg-light p-3 pt-2">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-dark">$5,63 <small class="text-body">المبلغ الحالي</small></p>
-                                    <p class="text-dark">$3,000 <small class="text-body">الهدف</small></p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
-                                        <span>33%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/md-duran.jpg" alt="">
-                            <div class="causes-overlay">
-                                <a class="btn btn-outline-primary" href="donate.html">
-                                    تبرع الأن
-                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                        <i class="fa fa-arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>كسوة العيد</small>
-                            </div>
-                            <h5 class="mb-3">اصنع فرحة العيد</h5>
-                            <p>شارك أيتامنا في فرحتهم بالعيد وساهم في كسوتهم</p>
-                            <div class="causes-progress bg-light p-3 pt-2">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-dark">$2,26 <small class="text-body">المبلغ الحالي</small></p>
-                                    <p class="text-dark">$2,000 <small class="text-body">الهدف</small></p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <span>30%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/ben-white.jpg" alt="">
-                            <div class="causes-overlay">
-                                <a class="btn btn-outline-primary" href="donate.html">
-                                    تبرع الأن
-                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                        <i class="fa fa-arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+@endforeach
+             
+                
             </div>
         </div>
     </div>
+
+   
+  
+   
     <!-- Causes End -->
 
 
