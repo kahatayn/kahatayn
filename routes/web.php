@@ -25,9 +25,9 @@ use App\Models\Event;
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing
 
-// new route => new controller method => new view 
+// new route => new controller method => new view
 
 Route::get('/', function () {
     $allEvent = Event::all();
@@ -100,5 +100,27 @@ Route::get('visa', function () {
 Route::get('donate', [DonationController::class, 'show']);
 Route::post('create', [DonationController::class, 'store']);
 
+
 Route::get('edit/{id}', [VolunteerController::class, 'edit']);
 Route::post('update/{id}',  [VolunteerController::class, 'update']);
+
+
+//Dashboard
+
+Route::get('dashboard', function () {
+    return view('dashboard.index');
+});
+
+Route::get('users', function () {
+    return view('dashboard.users');
+});
+
+Route::get('admin', function () {
+    return view('dashboard.admin');
+});
+
+Route::get('events', function () {
+    return view('dashboard.events');
+});
+
+
