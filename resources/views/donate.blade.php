@@ -7,13 +7,7 @@
         <div class="container text-center">
             <h1 class="display-4 text-white animated slideInDown mb-4">تَبَرَّع</h1>
             <p class="display-4 text-white animated slideInDown mb-4">صدقةٌ تُزكي بها نفسك</p>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0 text-end">
-                    <li class="breadcrumb-item "><a class="text-white" href="/">الصفحة الرئيسية</a></li>
-                    <li class="breadcrumb-item" ><a class="text-white" href="/">/</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">تبرع</li>
-                </ol>
-            </nav>
+
         </div>
     </div>
     <!-- Page Header End -->
