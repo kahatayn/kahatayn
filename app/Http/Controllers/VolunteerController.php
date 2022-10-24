@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Event;
-use App\Models\user_event;
 use App\Models\volunteer;
+use App\Models\user_event;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Socialite\Facades\Socialite;
@@ -51,8 +52,12 @@ class VolunteerController extends Controller
                 'user_id' => $userId,
                 'event_id' => $event->id
             ];
-            user_event::create($data);
-            return redirect('/profile');
+            if (DB::table("event_user")->where(['user_id' => $userId, 'event_id' => $event->id])->exists()) {
+                return redirect('/profile')->with('message', 'لقد سجلت بهذه الفعالية بالفعل');
+            } else {
+                user_event::create($data);
+                return redirect('/profile');
+            }
         }
         return view('volunteers.register');
     }

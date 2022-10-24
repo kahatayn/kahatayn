@@ -75,6 +75,11 @@
     {{-- events section --}}
         <div class="container h-100">
           <h1> -الفعاليات التي قمت بالمشاركة بها</h1>
+          @if(session()->has('message'))
+    <div class="alert alert-danger">
+        {{ session()->get('message') }}
+    </div>
+@endif
           <div class="row d-flex flex-wrap justify-content-center align-items-center ">
 
             @foreach ($events as $event)
