@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @include('dashboard.adds.head');
-    </head>
+
+<head>
+    @include('dashboard.adds.head');
+</head>
 
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
 
         <!-- Sidebar Start -->
         @include('dashboard.adds.sidebar');
@@ -112,45 +105,68 @@
             </nav>
             <!-- Navbar End -->
 
-            <a href="{{ route('addEvent') }}" class="btn btn-dark">ADD EVENT</a>
-            <div class="col-12">
-                <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">Responsive Table</h6>
-                    <div class="table bg-light ">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col"> Name</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                @foreach ($events as $event)
-                                <tr>
-                                    <th scope="row">{{ $event->id }}</th>
-                                    <td>{{ $event->name }}</td>
-                                    <td>{{ $event->description }}</td>
-                                    <td>{{ $event->location }}</td>
-                                    <td>{{ explode(' ',$event->date)[0]  }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
+            {{-- Events table --}}
+            <a href="{{ route('addEvent') }} " class=" m-2">
+                <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/xzksbhzh.json"
+                    trigger="hover"
+                    colors="primary:#ff6f0f,secondary:#ebe6ef"
+                    style="width:80px;height:80px">
+                </lord-icon></a>
+    
+    <div class="col-12">
+        <div class=" rounded h-100 p-4">
+            <h6 class="mb-4">Responsive Table</h6>
+            <div class="table bg-light ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"> Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        @foreach ($events as $event)
+                        <tr>
+                            <th scope="row">{{ $event->id }}</th>
+                            <td>{{ $event->name }}</td>
+                            <td>{{ $event->description }}</td>
+                            <td>{{ $event->location }}</td>
+                            <td>{{ explode(' ',$event->date)[0]  }}</td>
+                            <td>
+                                <a href="update/{{ $event->id }}">
+                                    <ion-icon name="create-outline" style="color: green"></ion-icon>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="delete/{{ $event->id }}">
+                                    <ion-icon name="trash-outline"></ion-icon>                                
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-        </div>
-            <!-- Form End -->
+    </div>
+</div>
+</div>
+<!-- Table End -->
 
-
-            {{-- footer start --}}
-            @include('dashboard.adds.footer');
-            {{-- footer end --}}
+           {{-- footer start --}}
+           @include('dashboard.adds.footer');
+           {{-- footer end --}}
 </body>
 
 </html>

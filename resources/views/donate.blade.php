@@ -1,6 +1,5 @@
-
-    @extends('master')
-
+@extends('master')
+<link rel="stylesheet" href="{{asset('css/visa.css')}}">
     @section('content')
     
         <!-- Page Header Start -->
@@ -194,8 +193,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                         
                                 <div class="front">
                                     <div class="image">
-                                        <img src="image/chip.png" alt="">
-                                        <img src="image/visa.png" alt="">
+                                        <img src="img/chip.png" alt="">
+                                        <img src="img/visa.png" alt="">
                                     </div>
                                     <div class="card-number-box">################</div>
                                     <div class="flexbox">
@@ -218,7 +217,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     <div class="box">
                                         <span>cvv</span>
                                         <div class="cvv-box"></div>
-                                        <img src="image/visa.png" alt="">
+                                        <img src="img/visa.png" alt="">
                                     </div>
                                 </div>
                         
@@ -390,4 +389,3 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
             
     
        @endsection
- 

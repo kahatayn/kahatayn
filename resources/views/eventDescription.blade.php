@@ -6,7 +6,7 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/about-1.jpg" alt="" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="data:image/jpeg;base64,{{ $event->image }}" alt="" style="object-fit: cover;">
                     {{-- <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/about-2.jpg" alt="" style="width: 200px; height: 200px;"> --}}
                 </div>
             </div>
@@ -21,9 +21,8 @@
                         </p>
                         <span class="text-primary">{{ explode(' ',$event->date)[0] }}</span>
                     </div>
-                    <p class="mb-5">
+                    
                         
-                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                     <a class="btn btn-primary py-2 px-3 me-3" href="">
                         تبرع الآن
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
