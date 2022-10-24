@@ -106,7 +106,7 @@ class VolunteerController extends Controller
         if (Auth::attempt($formFields) && Gate::allows('admin')) {
             $request->session()->regenerate();
 
-            return view('Dashboard.dashboard');
+            return view('Dashboard.admin');
         } elseif (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 

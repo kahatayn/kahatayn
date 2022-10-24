@@ -57,7 +57,7 @@ class EventController extends Controller
         ]);
 
         $event->save();
-        return redirect('/');
+        return redirect('events');
     }
 
     /**
@@ -72,6 +72,7 @@ class EventController extends Controller
 
         return view('Dashboard.allEvents', ["events" => $events]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -91,28 +92,54 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update($id)
     {
-        //
+        $event = Event::find($id);
+        // dd($event);
+        return view('Dashboard.updateEvent', ['event' => $event, "id" => $id]);
     }
 
+    public function updateEvent(Request $request, $id)
+    {
+        // dd($request);
+
+        $image = base64_encode(file_get_contents($request->file('image')));
+        $event = Event::find($id);
+
+        $event->name = $request->name;
+        $event->description = $request->description;
+        $event->date = $request->date;
+        $event->location = $request->location;
+        $event->image = $image;
+
+        $event->save();
+        // return redirect('/index');
+        return redirect('/events');
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+
+        // dd($user);
+        // load post
+        $book = Event::find($id);
+
+        $book->delete();
+        return back();
     }
 
     public function view()
     {
         $event = Event::all();
         // dd($event);
-        return view('events', ["events" => $event]);
+        return view('Events', ["events" => $event]);
     }
+
     public function eventView($id)
     {
         $event = Event::find($id);
