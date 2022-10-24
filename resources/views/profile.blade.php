@@ -76,7 +76,7 @@
         <div class="container h-100">
           <h1> -الفعاليات التي قمت بالمشاركة بها</h1>
           @if(session()->has('message'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger m-3">
         {{ session()->get('message') }}
     </div>
 @endif
