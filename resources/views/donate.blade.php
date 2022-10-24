@@ -140,7 +140,7 @@
                                     <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
                                         <input type="text" class="form-control bg-light border-0" id="name" name="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <label for="name">الاسم</label>
                                     </div>
                                 </div>
                                 <div class="col-12">

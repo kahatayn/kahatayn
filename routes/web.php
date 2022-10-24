@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
+use App\Models\Event;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +30,8 @@ use App\Http\Controllers\VolunteerController;
 // new route => new controller method => new view
 
 Route::get('/', function () {
-    return view('index');
+    $allEvent = Event::all();
+    return view('index', ['events' => $allEvent]);
 });
 
 // Route::get('user_events', [EventController::class, 'view']);
@@ -50,6 +54,9 @@ Route::get('volunteers', [VolunteerController::class, 'index'])->name('volunteer
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 Route::get('/contact', function () {
     return view('contact');
+});
+Route::get('/about', function () {
+    return view('about');
 });
 
 ###########
@@ -99,6 +106,10 @@ Route::get('donate', [DonationController::class, 'show']);
 Route::post('create', [DonationController::class, 'store']);
 
 
+Route::get('edit/{id}', [VolunteerController::class, 'edit']);
+Route::post('update/{id}',  [VolunteerController::class, 'update']);
+
+
 //Dashboard
 
 Route::get('dashboard', function () {
@@ -116,4 +127,5 @@ Route::get('admin', function () {
 Route::get('events', function () {
     return view('dashboard.events');
 });
+
 
