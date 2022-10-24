@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('provider_id')->nullable();
+  $table->string('avatar')->nullable();
             $table->boolean('role')->default(0);
             $table->rememberToken();
             $table->timestamps();

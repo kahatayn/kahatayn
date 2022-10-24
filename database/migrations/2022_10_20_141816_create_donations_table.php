@@ -16,9 +16,12 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email');
             $table->integer('card')->unique();
             $table->timestamp('date');
             $table->float('amount');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
