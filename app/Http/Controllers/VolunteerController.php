@@ -125,6 +125,7 @@ class VolunteerController extends Controller
     public function show(volunteer $volunteer)
     {
         //
+
     }
 
     /**
@@ -133,9 +134,11 @@ class VolunteerController extends Controller
      * @param  \App\Models\volunteer  $volunteer
      * @return \Illuminate\Http\Response
      */
-    public function edit(volunteer $volunteer)
+    public function edit($id)
     {
         //
+        $user = user::find($id);
+        return view('edit', ['user' => $user]);
     }
 
     /**
@@ -145,9 +148,30 @@ class VolunteerController extends Controller
      * @param  \App\Models\volunteer  $volunteer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, volunteer $volunteer)
+    public function update(Request $request, $id)
     {
         //
+        // dd($request);
+        $user = User::find($id);
+        // $formFields = $request->validate(
+        //     [
+        //         'name' => ['required', 'min:3'],
+        //         'email' => ['required', 'email'],
+        //         'password' => 'required|confirmed|min:6',
+        //         'phone' => ['required', 'max:10']
+        //     ]
+        // );
+
+        $image = base64_encode(file_get_contents($request->file('profile_image')));
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->image = $image;
+
+        //hash password
+        //create user
+        $user->save();
+        return redirect('profile');
     }
 
     /**
