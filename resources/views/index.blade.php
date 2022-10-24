@@ -136,8 +136,7 @@
                             </div>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="data:image/jpeg;base64,{{ $event->image }}" alt="">
-                            <div class="causes-overlay">
+                            <div style="width:490px;height:300px"><img class="img-fluid" src="data:image/jpeg;base64,{{ $event->image }}" alt=""></div>                            <div class="causes-overlay">
                                 <a class="btn btn-outline-primary" href="/eventDescription/{{ $event->id }}">
                                     تبرع الأن
                                     <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
