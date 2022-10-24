@@ -2,9 +2,22 @@
   @section('content')
   
   <!-- Causes Start -->
-  <div class="container-xxl py-5">
-    <div class="container">
-       
+
+  <div class="container-fluid py-0 px-0">
+    <div class="container-fluid"style="
+    padding-left: 0px;
+    padding-right: 0px;
+">
+      <div
+      class="container-fluid page-header mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+        البرامج والمشاريع
+        </h1>
+  </div>
+  </div>
       <div
         class="text-center mx-auto mb-5 wow fadeInUp"
         data-wow-delay="0.1s"
@@ -13,11 +26,10 @@
         <div
           class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
         >
-          Feature Causes
+          الفعاليات
         </div>
         <h1 class="display-6 mb-5">
-          Every Child Deserves The Opportunity To Learn
-        </h1>
+        من خلال شراكتكم معنا نستطيع سوياً تنفيذ مشروعٍ أو حملةٍ تساهم في دعم الأطفال الذين نرعاهم       </h1>
       </div>
       <div class="row g-4 justify-content-center"> 
         @foreach ($events as $event)
