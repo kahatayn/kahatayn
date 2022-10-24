@@ -7,13 +7,7 @@
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center">
             <h1 class="display-4 text-white animated slideInDown mb-4">من نحن</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">الصفحة الرئيسية /</a></li>
-                    <!-- <li class="breadcrumb-item"><a class="text-white" href="#"></a></li> -->
-                    <li class="breadcrumb-item text-primary active" aria-current="page">من نحن</li>
-                </ol>
-            </nav>
+
         </div>
     </div>
     <!-- Page Header End -->
@@ -26,7 +20,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
                         <img class="position-absolute w-100 h-100 pt-5 pe-5" src="img/team.jpg" alt="" style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/hand.png" alt="" style="width: 200px; height: 200px;">
+                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/pexels.jpg" alt="" style="width: 200px; height: 200px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -44,7 +38,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </div>
                         </a>
-                        <a class="btn btn-outline-primary py-2 px-3" href="contact.html">
+                        <a class="btn btn-outline-primary py-2 px-3" href="contact">
                             تواصل معنا
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-left"></i>
