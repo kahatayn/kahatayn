@@ -35,14 +35,15 @@ data-wow-delay="0.1s"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{ $user->name }}</h5>
               <p class="text-muted mb-1">متطوع</p>
-             
+
+
             </div>
 
-          
+
           </div>
-        
+
         </div>
-        
+
         <div class="col-lg-8 ">
           <div class="card mb-4">
             <div class="card-body p-2">
@@ -63,7 +64,7 @@ data-wow-delay="0.1s"
                             </p>
                         @enderror
                     </div>
-            
+                    <br>
                     <div class="mb-6 text-end">
                         <label for="profile_image" class="inline-block text-lg  mb-2">
                             الصورة
@@ -72,7 +73,8 @@ data-wow-delay="0.1s"
                             type="file"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="profile_image"
-                            
+
+
                         />
                         @error('name')
                             <p class="text-red-500 text-xs mt-1">
@@ -80,7 +82,7 @@ data-wow-delay="0.1s"
                             </p>
                         @enderror
                     </div>
-            
+                    <br>
                     <label for="email" class="inline-block text-lg mb-2"
                         >الايميل</label
                     >
@@ -96,7 +98,7 @@ data-wow-delay="0.1s"
                     </p>
                 @enderror
                 </div>
-      
+                <br>
                 <div class="mb-6 text-end">
                   <label
                       for="phone"
@@ -115,15 +117,16 @@ data-wow-delay="0.1s"
                   </p>
               @enderror
               </div>
+              <br>
               <button type="submit" class="btn btn-info">update</button>
 
         </form>
 
-     
+
         </div>
       </div>
     </div>
-    
+
           </div>
         </div>
 
