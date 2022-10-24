@@ -177,29 +177,30 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-white p-5">
-                        <form >
+                        <form method="POST" action="/donate" >
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-light border-0" name="name" id="name" placeholder="Your Name">
                                         <label for="name">أدخل أسمك</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-light border-0" id="email" placeholder="Your Email">
-                                        <label for="email">أدخل أيميلك</label>
+                                        <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email">
+                                        <label for="email">أدخل بريدك الالكتروني</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
+                                        <input type="radio" class="btn-check" value="15" name="amount" id="btnradio1" checked>
                                         <label class="btn btn-light py-3" for="btnradio1">15JD</label>
 
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+                                        <input type="radio" class="btn-check" value="20" name="amount" id="btnradio2">
                                         <label class="btn btn-light py-3" for="btnradio2">20JD</label>
 
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                        <input type="radio" class="btn-check" value="30" name="amount" id="btnradio3">
                                         <label class="btn btn-light py-3" for="btnradio3">30JD</label>
                                     </div>
                                 </div>
