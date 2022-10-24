@@ -2,10 +2,10 @@
 
 @section('content')
 <div
-      class="container-fluid page-header mb-5 wow fadeIn"
+      class="container-fluid page-header wow fadeIn "
       data-wow-delay="0.1s"
     ></div>
-<section class="vh-10" style="background-color: #eee;">
+<section class="vh-10  my-5 bg-light" >
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -15,7 +15,7 @@
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
                     <header class="text-center">
-                        <h2 class="text-2xl font-bold uppercase mb-1">
+                        <h2 class="text-2xl font-bold uppercase py-1 my-5">
                             حساب جديد
                         </h2>
                         <p class="mb-4">سجل حساب جديد و ابدأ رحلتك كمتطوع معنا</p>
@@ -54,7 +54,7 @@
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example1c">رقم الهاتف</label>
-                          <input type="number" id="form3Example1c" class="form-control"  />
+                          <input type="number" name="phone" id="form3Example1c" class="form-control"  />
                           @error('image')
                           <p class="text-red-500 text-xs mt-1">
                               {{$message}}
@@ -102,7 +102,7 @@
                     </div>
                     </div>
   
-                   <div    class=" d-flex justify-content-around ">
+                   <div    class=" d-flex justify-content-around py-4 ">
                      <button style="font-size:20px" type="submit" class=" btn btn-primary w-25 btn-sm btn-block">سجل</button>
                     <p  class="pe-5 pt-3  " >
                         لديك حساب بالفعل؟

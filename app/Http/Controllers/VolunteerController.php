@@ -47,7 +47,6 @@ class VolunteerController extends Controller
     {
         //
 
-
         $formFields = $request->validate(
             [
                 'name' => ['required', 'min:3'],
@@ -61,13 +60,14 @@ class VolunteerController extends Controller
         //
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
+
         //create user
         $user = User::create($formFields);
 
         // /auto log
         auth()->login($user);
 
-        return redirect('profile');
+        return redirect('/profile');
         // ->with
         //     ('message', 'User created and logged in');
 
