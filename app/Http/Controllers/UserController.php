@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -22,5 +23,19 @@ class UserController extends Controller
     //create new user 
     public function store(Request $request)
     {
+    }
+
+    public function view()
+    {
+        $allUsers = user::all();
+        return view('dashboard.users', ['allUsers' => $allUsers]);
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        $user->delete();
+        return redirect('/users');
     }
 }
