@@ -46,7 +46,7 @@ class VolunteerController extends Controller
     //create new user
     public function store(Request $request)
     {
-
+        //
 
         $formFields = $request->validate(
             [
@@ -61,13 +61,14 @@ class VolunteerController extends Controller
         //
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
+
         //create user
         $user = User::create($formFields);
 
         // /auto log
         auth()->login($user);
 
-        return redirect('profile');
+        return redirect('/profile');
         // ->with
         //     ('message', 'User created and logged in');
 
@@ -115,6 +116,7 @@ class VolunteerController extends Controller
             ]
         )->onlyInput('email');
     }
+
 
 
     /**
