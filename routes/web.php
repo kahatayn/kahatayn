@@ -181,8 +181,8 @@ Route::get('/users', [UserController::class, 'view'])->middleware('can:admin');
 
 Route::get('deleteU/{id}', [UserController::class, 'destroy']);
 
-Route::get('admin', function () {
-    return view('dashboard.admin');
+Route::get('/admin', function () {
+    return view('Dashboard.index');
 })->middleware('can:admin');
 
 //admin views in dashboard
@@ -205,4 +205,3 @@ Route::get('admin/dashboard/add_event', function () {
 // Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
 
 Route::get('deleteev/{id}', [VolunteerController::class, 'destroy']);
-

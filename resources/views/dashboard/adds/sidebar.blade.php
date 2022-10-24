@@ -19,7 +19,6 @@
         <a href="/dashboard" class="nav-item nav-link " ><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="/users" class="nav-item nav-link" ><i class="fa fa-user me-2"></i>Users</a>
             <a href="/events" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Events</a>
-            <a href="/admin" class="nav-item nav-link"><i class="fa fa-cogs me-2"></i>Admin</a>
 
         </div>
     </nav>
