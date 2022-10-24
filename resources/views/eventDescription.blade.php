@@ -16,14 +16,13 @@
                     <h1 class="display-6 mb-5">{{ $event->name }}</h1>
                     <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
                         <p class="text-dark mb-2">
-                            {{-- {{ $event->description }} --}}
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aut vel facilis iste ipsam voluptates laborum dolor? Dicta suscipit voluptates, consectetur accusantium sequi placeat obcaecati fugiat eius pariatur id accusamus.
+                            {{ $event->description }}
                         </p>
                         <span class="text-primary">{{ explode(' ',$event->date)[0] }}</span>
                     </div>
                     
                         
-                    <a class="btn btn-primary py-2 px-3 me-3" href="">
+                    <a class="btn btn-primary py-2 px-3 me-3" href="/donateshow">
                         تبرع الآن
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                             <i class="fa fa-arrow-left"></i>
