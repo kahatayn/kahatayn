@@ -116,12 +116,12 @@ Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescripti
 
 // //donation
 //show donation page//form
-Route::get('/donate',  [DonationController::class, 'show']);
+Route::get('/donate',  [DonationController::class, 'show'])->middleware('guest');
 
 Route::post('/donate/details', [DonationController::class, 'store']);
 
 // show visa form
-Route::get('/donate/visaDetails', function(){
-    return view('visa');
-});
+// Route::get('/donate/visaDetails', function(){
+//     return view('visa');
+// });
 // Route::post('create', [DonationController::class, 'store']);
