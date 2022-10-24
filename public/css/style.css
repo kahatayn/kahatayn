@@ -4,7 +4,9 @@
     --light: #f8f8f9;
     --dark: #001d23;
     direction: rtl;
+    font-family: 'Scheherazade New', serif;
 }
+
 
 .back-to-top {
     position: fixed;
