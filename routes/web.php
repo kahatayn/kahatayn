@@ -180,7 +180,7 @@ Route::get('admin', function () {
 })->middleware('can:admin');
 
 //admin views in dashboard
-Route::get('events', [EventController::class, 'show'])->middleware('can:admin');;
+Route::get('events', [EventController::class, 'show'])->middleware('can:admin');
 
 
 //view events in inex
@@ -189,4 +189,4 @@ Route::get('/show/events', [EventController::class, 'view']);
 Route::get('admin/dashboard/add_event', function () {
     return view('Dashboard.AddEventdashboard');
     // ->middleware('can:admin');
-})->name('addEvent')->middleware('can:admin');;
+})->name('addEvent')->middleware('can:admin');
