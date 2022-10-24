@@ -77,9 +77,14 @@ class DonationController extends Controller
 
         //store data -> ask for visa if true create record else redirect back
         Donation::create($formfiled);
-        return redirect('/')->with('message',
+        session()->flash('message',
         'تم استقبال تبرعك.
         جزاك الله خيراً');
+        return redirect('/');
+        
+        // ->with('message',
+        // 'تم استقبال تبرعك.
+        // جزاك الله خيراً');
     }
 
     /**

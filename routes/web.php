@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\BotManController;
+
 use App\Models\Event;
 
 /*
@@ -187,3 +189,8 @@ Route::get('admin/dashboard/add_event', function () {
     return view('Dashboard.AddEventdashboard');
     // ->middleware('can:admin');
 })->name('addEvent')->middleware('can:admin');;
+
+
+// //chatbot
+// Route::get('/botman',[BotManController::class, 'show'] );
+// Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
