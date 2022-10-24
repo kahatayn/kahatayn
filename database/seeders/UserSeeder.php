@@ -17,83 +17,83 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert(
-            [
-                [
-                    'name' => 'Nourman',
-                    'email' => 'Nourman@gmail.com',
-                    'phone' => '0784423241',
-                    'password' => Hash::make('123456'),
-                ],
-                [
-                    'name' => 'Laith',
-                    'email' => 'Laith@gmail.com',
-                    'phone' => '0784663241',
-                    'password' => Hash::make('123456'),
+        // DB::table('users')->insert(
+        //     [
+        //         [
+        //             'name' => 'Nourman',
+        //             'email' => 'Nourman@gmail.com',
+        //             'phone' => '0784423241',
+        //             'password' => Hash::make('123456'),
+        //         ],
+        //         [
+        //             'name' => 'Laith',
+        //             'email' => 'Laith@gmail.com',
+        //             'phone' => '0784663241',
+        //             'password' => Hash::make('123456'),
 
-                ],
-                [
-                    'name' => 'Manar',
-                    'email' => 'Manar@gmail.com',
-                    'phone' => '0783423241',
-                    'password' => Hash::make('123456'),
-                ],
-                [
-                    'name' => 'Ahmad Al',
-                    'email' => 'AhmadAl@gmail.com',
-                    'phone' => '0783343241',
-                    'password' => Hash::make('123456'),
-                ],
-                [
-                    'name' => 'Ahmad ZA',
-                    'email' => 'AhmadZa@gmail.com',
-                    'phone' => '0783343241',
-                    'password' => Hash::make('123456'),
-                ],
-                [
-                    'name' => 'Mohammad',
-                    'email' => 'Mohammad@gmail.com',
-                    'phone' => '0784456741',
-                    'password' => Hash::make('123456'),
-                ]
-            ]
-        );
+        //         ],
+        //         [
+        //             'name' => 'Manar',
+        //             'email' => 'Manar@gmail.com',
+        //             'phone' => '0783423241',
+        //             'password' => Hash::make('123456'),
+        //         ],
+        //         [
+        //             'name' => 'Ahmad Al',
+        //             'email' => 'AhmadAl@gmail.com',
+        //             'phone' => '0783343241',
+        //             'password' => Hash::make('123456'),
+        //         ],
+        //         [
+        //             'name' => 'Ahmad ZA',
+        //             'email' => 'AhmadZa@gmail.com',
+        //             'phone' => '0783343241',
+        //             'password' => Hash::make('123456'),
+        //         ],
+        //         [
+        //             'name' => 'Mohammad',
+        //             'email' => 'Mohammad@gmail.com',
+        //             'phone' => '0784456741',
+        //             'password' => Hash::make('123456'),
+        //         ]
+        //     ]
+        // );
 
-        DB::table('donations')->insert(
-            [
-                [
-                    'name' => 'AhmadAl',
-                    'card' => '12353676392635',
-                    'date' => '2022-10-14',
-                    'amount' => '600'
-                ],
-                [
-                    'name' => 'Manar',
-                    'card' => '12353644492635',
-                    'date' => '2022-10-17',
-                    'amount' => '300'
-                ],
-                [
-                    'name' => 'AhmadZa',
-                    'card' => '12355556392635',
-                    'date' => '2022-10-10',
-                    'amount' => '100'
-                ],
-                [
-                    'name' => 'Laith',
-                    'card' => '12353676365635',
-                    'date' => '2022-10-22',
-                    'amount' => '50'
-                ],
-                [
-                    'name' => 'Nourman',
-                    'card' => '1235432892635',
-                    'date' => '2022-10-23',
-                    'amount' => '200'
-                ],
+        // DB::table('donations')->insert(
+        //     [
+        //         [
+        //             'name' => 'AhmadAl',
+        //             'card' => '12353676392635',
+        //             'date' => '2022-10-14',
+        //             'amount' => '600'
+        //         ],
+        //         [
+        //             'name' => 'Manar',
+        //             'card' => '12353644492635',
+        //             'date' => '2022-10-17',
+        //             'amount' => '300'
+        //         ],
+        //         [
+        //             'name' => 'AhmadZa',
+        //             'card' => '12355556392635',
+        //             'date' => '2022-10-10',
+        //             'amount' => '100'
+        //         ],
+        //         [
+        //             'name' => 'Laith',
+        //             'card' => '12353676365635',
+        //             'date' => '2022-10-22',
+        //             'amount' => '50'
+        //         ],
+        //         [
+        //             'name' => 'Nourman',
+        //             'card' => '1235432892635',
+        //             'date' => '2022-10-23',
+        //             'amount' => '200'
+        //         ],
 
-            ]
-        );
+        //     ]
+        // );
 
         DB::table('events')->insert(
             [

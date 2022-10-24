@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\volunteer;
+use App\Models\user_event;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Socialite\Facades\Socialite;
@@ -35,6 +37,27 @@ class VolunteerController extends Controller
     {
         if (Auth::user()) {
             return view('index');
+        }
+        return view('volunteers.register');
+    }
+
+    public function newVol($id)
+    {
+
+
+        if (Auth::user()) {
+            $userId = Auth::user()->id;
+            $event = Event::find($id);
+            $data = [
+                'user_id' => $userId,
+                'event_id' => $event->id
+            ];
+            if (DB::table("event_user")->where(['user_id' => $userId, 'event_id' => $event->id])->exists()) {
+                return redirect('/profile')->with('message', 'لقد سجلت بهذه الفعالية بالفعل');
+            } else {
+                user_event::create($data);
+                return redirect('/profile');
+            }
         }
         return view('volunteers.register');
     }
@@ -188,9 +211,14 @@ class VolunteerController extends Controller
      * @param  \App\Models\volunteer  $volunteer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(volunteer $volunteer)
+    public function destroy($id)
     {
         //
+        // $ev = user_event::find($id);
+        $ev = DB::table('event_user')->where('event_id', $id);
+        // dd($ev);
+        $ev->delete();
+        return redirect('/profile');
     }
 
     //////////////

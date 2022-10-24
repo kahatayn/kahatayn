@@ -1,6 +1,13 @@
 
 @extends('master')
+
 @section('content')
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">المشروع</h1>
+
+    </div>
+</div>
 <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
@@ -28,7 +35,7 @@
                             <i class="fa fa-arrow-left"></i>
                         </div>
                     </a>
-                    <a class="btn btn-outline-primary py-2 px-3" href="/register">
+                    <a class="btn btn-outline-primary py-2 px-3" href="/newVol/{{ $event->id }}">
                         التسجيل كمتطوع
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                             <i class="fa fa-arrow-left"></i>

@@ -13,16 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-
-            $table->string('email')->nullable();
-            $table->string('card')->nullable();
-            $table->timestamp('date')->nullable();        
-
-            $table->float('amount');
-            $table->rememberToken();
+        Schema::table('event_user', function (Blueprint $table) {
             $table->timestamps();
         });
     }
@@ -34,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::table('event_user', function (Blueprint $table) {
+            //
+        });
     }
 };

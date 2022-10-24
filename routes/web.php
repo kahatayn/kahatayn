@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\BotManController;
+
 use App\Models\Event;
 
 /*
@@ -71,6 +73,10 @@ Route::get(
     [VolunteerController::class, 'create']
 )->middleware('guest');
 
+Route::get(
+    '/newVol/{id}',
+    [VolunteerController::class, 'newVol']
+);
 //create new user
 Route::post('/volunteers', [VolunteerController::class, 'store']);
 
@@ -189,4 +195,14 @@ Route::get('/show/events', [EventController::class, 'view']);
 Route::get('admin/dashboard/add_event', function () {
     return view('Dashboard.AddEventdashboard');
     // ->middleware('can:admin');
+
 })->name('addEvent')->middleware('can:admin');
+
+
+
+// //chatbot
+// Route::get('/botman',[BotManController::class, 'show'] );
+// Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
+
+Route::get('deleteev/{id}', [VolunteerController::class, 'destroy']);
+

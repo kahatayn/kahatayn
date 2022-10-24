@@ -27,7 +27,7 @@
                     
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw mt-4 pt-2"></i>
                       <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="form3Example3c">بريد الالكتروني</label>
                         <input type="email" id="form3Example3c" class="form-control" name="email" value="{{old('email')}}" />
@@ -42,7 +42,7 @@
                    
 
                     <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <i class="fas fa-lock fa-lg me-3 fa-fw mt-4 pt-2"></i>
                         <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">كلمة المرور</label>
                           <input type="password" id="form3Example4c" class="form-control" name="password" />
@@ -73,8 +73,8 @@
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                    class="img-fluid" alt="Sample image">
+                  <img src="https://media.discordapp.net/attachments/1032593113778245635/1034123633209118740/pexels-alexander-grey-1148998.jpg?width=994&height=662"
+                    class="img-fluid w-100" alt="Sample image">
   
                 </div>
               </div>
