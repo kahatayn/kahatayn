@@ -140,10 +140,11 @@ Route::get('/eventDescription/{id}', [VolunteerController::class, 'eventDescript
 // 
 // //donation
 //show donation page//form
-Route::get('/donate',  [DonationController::class, 'show'])->middleware('guest');
+Route::get('/donate',  [DonationController::class, 'show']);
 
 Route::post('/donate/details', [DonationController::class, 'store']);
 
+Route::get('/donateshow',  [DonationController::class, 'showWithGet']);
 // show visa form
 // Route::get('/donate/visaDetails', function(){
 //     return view('visa');
@@ -169,13 +170,11 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('can:admin');;
 
-Route::get('users', function () {
-    return view('dashboard.users');
-});
+Route::get('deleteU/{id}', [UserController::class, 'destroy']);
 
 Route::get('admin', function () {
     return view('dashboard.admin');
-})->middleware('can:admin');;
+})->middleware('can:admin');
 
 //admin views in dashboard
 Route::get('events', [EventController::class, 'show'])->middleware('can:admin');;
