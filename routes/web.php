@@ -24,9 +24,9 @@ use App\Http\Controllers\VolunteerController;
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing
 
-// new route => new controller method => new view 
+// new route => new controller method => new view
 
 Route::get('/', function () {
     return view('index');
@@ -125,3 +125,24 @@ Route::post('/donate/details', [DonationController::class, 'store']);
 //     return view('visa');
 // });
 // Route::post('create', [DonationController::class, 'store']);
+
+
+
+//Dashboard
+
+Route::get('dashboard', function () {
+    return view('dashboard.index');
+});
+
+Route::get('users', function () {
+    return view('dashboard.users');
+});
+
+Route::get('admin', function () {
+    return view('dashboard.admin');
+});
+
+Route::get('events', function () {
+    return view('dashboard.events');
+});
+
