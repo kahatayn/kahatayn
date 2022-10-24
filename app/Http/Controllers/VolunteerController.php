@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Event;
+use App\Models\user_event;
 use App\Models\volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -35,6 +36,23 @@ class VolunteerController extends Controller
     {
         if (Auth::user()) {
             return view('index');
+        }
+        return view('volunteers.register');
+    }
+
+    public function newVol($id)
+    {
+
+
+        if (Auth::user()) {
+            $userId = Auth::user()->id;
+            $event = Event::find($id);
+            $data = [
+                'user_id' => $userId,
+                'event_id' => $event->id
+            ];
+            user_event::create($data);
+            return redirect('/profile');
         }
         return view('volunteers.register');
     }

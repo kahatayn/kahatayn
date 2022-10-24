@@ -71,6 +71,10 @@ Route::get(
     [VolunteerController::class, 'create']
 )->middleware('guest');
 
+Route::get(
+    '/newVol/{id}',
+    [VolunteerController::class, 'newVol']
+);
 //create new user
 Route::post('/volunteers', [VolunteerController::class, 'store']);
 
