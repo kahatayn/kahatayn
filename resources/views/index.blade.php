@@ -119,7 +119,7 @@
                     <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
                         <div class="text-center p-4 pt-0">
                             <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>{{ $event->date }}</small>
+                                <small>{{ explode(' ',$event->date)[0] }}</small>
                             </div>
                             <h5 class="mb-3">{{ $event->name }}</h5>
                             <p>
@@ -138,9 +138,9 @@
                             </div>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/school.jpg" alt="">
+                            <img class="img-fluid" src="data:image/jpeg;base64,{{ $event->image }}" alt="">
                             <div class="causes-overlay">
-                                <a class="btn btn-outline-primary" href="donate.html">
+                                <a class="btn btn-outline-primary" href="/eventDescription/{{ $event->id }}">
                                     تبرع الأن
                                     <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                         <i class="fa fa-arrow-right"></i>
