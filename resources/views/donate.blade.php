@@ -7,7 +7,13 @@
         <div class="container text-center">
             <h1 class="display-4 text-white animated slideInDown mb-4">تَبَرَّع</h1>
             <p class="display-4 text-white animated slideInDown mb-4">صدقةٌ تُزكي بها نفسك</p>
-
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0 text-end">
+                    <li class="breadcrumb-item "><a class="text-white" href="/">الصفحة الرئيسية</a></li>
+                    <li class="breadcrumb-item" ><a class="text-white" href="/">/</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">تبرع</li>
+                </ol>
+            </nav>
         </div>
     </div>
     <!-- Page Header End -->
@@ -25,11 +31,14 @@
                         <h1 class="display-6 mb-5" style="font-family: 'Amiri', serif; font-size:24px;">
 
                             أتَى النَّبيَّ صلَّى اللهُ عليه وسلَّم رجلٌ يشكو قسوةَ قلبِه قال أتحِبُّ أن يلينَ قلبُك وتُدرِكُ حاجتَك ارحَمِ اليتيمَ وامسَحْ رأسَه وأطعِمه من طعامِك يلِنْ قلبُك وتُدرِكْ حاجتَك                        </h1>
-                        <p class="mb-0">
+                        <p class="mb-0 fs-5 text-dark">
 
-                            ساهم في دعم كفالة يتيم عبر دفعك لجزء من مبلغ الكفالة  ريال او بما تجود به نفسك
+                           
+                            ساهم في دعم كفالة يتيم عبر دفعك لجزء من مبلغ الكفالة أو بما تجود به نفسك
+                            .<br>
+                            مبلغ الكفالة يتم استخدامه في تكاليف الحياة اليومية (طعام، شراب، لباس)،التعليم، العناية الصحية وغيرها.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae doloribus tempora omnis ducimus voluptate nisi quia, cupiditate deleniti natus, vel atque exercitationem in modi alias est fugit voluptas. Ipsa?
+
                         </p>
                         <br><br><br>
                     </div>
@@ -170,7 +179,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     </div>
 
                                     <div class="col-12 ">
-                                        <button type = 'submit' class="btn btn-primary px-5"  name="Donate_bt"style="height: 60px;">
+                                        <button type = 'submit' class="btn btn-primary px-5" 
+                                     
+
+                                        name="Donate_bt"style="height: 60px;">
                                             تبرع الآن
                                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                                 <i class="fa fa-arrow-left"></i>
@@ -257,6 +269,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
             </div>
         </div>
         <!-- Donate End -->
+        <
+
 
 
        @endsection
