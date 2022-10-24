@@ -2,7 +2,7 @@
     @extends('master')
 
     @section('content')
-    
+
         <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center">
@@ -24,13 +24,13 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
 
-                    
+
       <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
                             تبرع الآن
                         </div>
 
                         <h1 class="display-6 mb-5" style="font-family: 'Amiri', serif; font-size:24px;">
-                            
+
                             أتَى النَّبيَّ صلَّى اللهُ عليه وسلَّم رجلٌ يشكو قسوةَ قلبِه قال أتحِبُّ أن يلينَ قلبُك وتُدرِكُ حاجتَك ارحَمِ اليتيمَ وامسَحْ رأسَه وأطعِمه من طعامِك يلِنْ قلبُك وتُدرِكْ حاجتَك                        </h1>
                         <p class="mb-0">
 
@@ -43,9 +43,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                 </div>
             </div>
                 <div class="row g-5 align-items-center">
-                    
-                    
- 
+
+
+
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="h-100 bg-secondary p-5">
                             <form action = "/donate/details" method = "post">
@@ -54,11 +54,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     <div class="col-12">
                                         <div class="form-floating">
                                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-    
-                                            <input type="text" 
+
+                                            <input type="text"
                                             class="form-control bg-light border-0"
                                              id="name" name="name"
-                                             value="{{old('name')}}"           
+                                             value="{{old('name')}}"
                                                placeholder="Your Name">
 
                                             <label for="name">الاسم</label>
@@ -71,7 +71,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="email" 
+                                            <input type="email"
                                             class="form-control bg-light border-0"
                                              id="email" name="email"
                                              value="{{old('email')}}"
@@ -103,7 +103,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
 
                                     <div class="col-12">
                                         <div class="form-floating ">
-                                            <input type="text" 
+                                            <input type="text"
                                             class="form-control bg-light border-0 card-holder-input"
                                              id="card-holder" name="card-holder"
                                              value="{{old('card-holder')}}"
@@ -111,7 +111,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                              required placeholder="Your card holder">
                                             <label for="card-holder">اسم حامل البطاقة</label>
                                         </div>
-                                   
+
                                     </div>
                                       <div>
                                        <label class="pe-5">(mm) الشهر</label >
@@ -121,7 +121,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         </div>
                                         <br>
                                     <div class="d-inline-flex p-2">
-                                       
+
                                         <div class="inputBox pe-5">
                                             <select name="" id="" class="month-input" required>
                                                 <option value="month" selected disabled>شهر</option>
@@ -159,9 +159,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         </div>
                                     </div>
 
-                                   
+
                                     {{-- //////////////////////////////// --}}
-                                  
+
                                     <div class="form-floating">
                                         <input type="number" name="amount" class="form-control bg-light border-0"  placeholder="Enter the amount to be donated">
                                         <label name="amount">مقدار التبرع</label>
@@ -172,7 +172,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         </p>
                                     @enderror
                                     </div>
-    
+
                                     <div class="col-12 ">
                                         <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
                                             تبرع الآن
@@ -191,11 +191,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                         <div class="container">
 
                             <div class="card-container">
-                        
+
                                 <div class="front">
                                     <div class="image">
-                                        <img src="image/chip.png" alt="">
-                                        <img src="image/visa.png" alt="">
+                                        <img src="img/chip.png" alt="">
+                                        <img src="img/visa.png" alt="">
                                     </div>
                                     <div class="card-number-box">################</div>
                                     <div class="flexbox">
@@ -212,21 +212,21 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                         </div>
                                     </div>
                                 </div>
-                        
+
                                 <div class="back">
                                     <div class="stripe"></div>
                                     <div class="box">
                                         <span>cvv</span>
                                         <div class="cvv-box"></div>
-                                        <img src="image/visa.png" alt="">
+                                        <img src="img/visa.png" alt="">
                                     </div>
                                 </div>
-                        
+
                             </div>
 
                         {{-- form start --}}
                             {{-- <form action=""> --}}
-                                
+
                                 {{-- <div class="inputBox">
                                     <span>card number</span>
                                     <input type="text" maxlength="16" class="card-number-input">
@@ -283,9 +283,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                  --}}
 
                                 {{-- <div class="row g-5 align-items-center"> --}}
-                    
-                    
- 
+
+
+
                                     {{-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                                         <div class="h-100 bg-secondary p-5">
                                             <form action = "/donate/details" method = "post">
@@ -294,7 +294,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-                    
+
                                                             <input type="text" class="form-control bg-light border-0" id="name" name="name" placeholder="Your Name">
                                                             <label for="name">الاسم</label>
                                                         </div>
@@ -315,18 +315,18 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                                         </p>
                                                     @enderror
                                                     </div>
-                                                  
+
                                                     <div class="form-floating">
                                                         <input type="number" name="amount" class="form-control bg-light border-0"  placeholder="Enter the amount to be donated">
                                                         <label name="amount">مقدار التبرع</label>
-                
+
                                                         @error('amount')
                                                         <p class="text-danger text-end text-xs mt-1">
                                                             {{$message}}
                                                         </p>
                                                     @enderror
                                                     </div>
-                    
+
                                                     <div class="col-12 ">
                                                         <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
                                                             تبرع الآن
@@ -339,55 +339,54 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                             </form>
                                         </div>
                                     </div>
-                
+
                             </form> --}}
-                        
+
                         {{-- </div>     --}}
-                            
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
+
                         <script>
-                        
+
                         document.querySelector('.card-number-input').oninput = () =>{
                             document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
                         }
-                        
+
                         document.querySelector('.card-holder-input').oninput = () =>{
                             document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
                         }
-                        
+
                         document.querySelector('.month-input').oninput = () =>{
                             document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
                         }
-                        
+
                         document.querySelector('.year-input').oninput = () =>{
                             document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
                         }
-                        
+
                         document.querySelector('.cvv-input').onmouseenter = () =>{
                             document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
                             document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
                         }
-                        
+
                         document.querySelector('.cvv-input').onmouseleave = () =>{
                             document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
                             document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
                         }
-                        
+
                         document.querySelector('.cvv-input').oninput = () =>{
                             document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
                         }
-                        
+
                         </script>
                           </div>
                 </div>
             </div>
         </div>
         <!-- Donate End -->
-            
-    
+
+
        @endsection
- 
