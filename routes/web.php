@@ -87,6 +87,36 @@ Route::get(
 // Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
+Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);
+
+//REGISTER WITH GITHUB
+Route::get('/register/github',
+[VolunteerController :: class,'github'])->middleware('guest');
+
+
+//REGISTER WITH GITHUB// redirect
+Route::get('/register/github/redirect',
+[VolunteerController :: class,'githubRedirect'])->middleware('guest');
+
+
+//REGISTER WITH google
+Route::get('/register/google',
+[VolunteerController :: class,'google'])->middleware('guest');
+
+
+//REGISTER WITH google// redirect
+Route::get('/register/google/redirect',
+[VolunteerController :: class,'googleRedirect'])->middleware('guest');
+
+//REGISTER WITH facebook
+Route::get('/register/facebook',
+[VolunteerController :: class,'facebook'])->middleware('guest');
+
+
+//REGISTER WITH facebook// redirect
+Route::get('/register/facebook/redirect',
+[VolunteerController :: class,'facebookRedirect'])->middleware('guest');
+
 
 Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
@@ -95,15 +125,17 @@ Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('aut
 Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
 
 // //donation
+//show donation page//form
+Route::get('/donate',  [DonationController::class, 'show'])->middleware('guest');
 
-Route::get('donate', function () {
-    return view('donate');
-});
-Route::get('visa', function () {
-    return view('visa');
-});
-Route::get('donate', [DonationController::class, 'show']);
-Route::post('create', [DonationController::class, 'store']);
+Route::post('/donate/details', [DonationController::class, 'store']);
+
+// show visa form
+// Route::get('/donate/visaDetails', function(){
+//     return view('visa');
+// });
+// Route::post('create', [DonationController::class, 'store']);
+
 
 
 Route::get('edit/{id}', [VolunteerController::class, 'edit']);

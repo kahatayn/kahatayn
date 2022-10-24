@@ -40,3 +40,4 @@ integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbs
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+{{-- <script src="https://cdn.tailwindcss.com"></script> --}}
