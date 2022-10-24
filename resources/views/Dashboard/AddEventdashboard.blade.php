@@ -1,19 +1,19 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @include('dashboard.adds.head');
-    </head>
+
+<head>
+    @include('dashboard.adds.head');
+</head>
 
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
 
         <!-- Sidebar Start -->
         @include('dashboard.adds.sidebar');
@@ -112,45 +112,52 @@
             </nav>
             <!-- Navbar End -->
 
-            <a href="{{ route('addEvent') }}" class="btn btn-dark">ADD EVENT</a>
-            <div class="col-12">
-                <div class="bg-secondary rounded h-100 p-4">
-                    <h6 class="mb-4">Responsive Table</h6>
-                    <div class="table bg-light ">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col"> Name</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                @foreach ($events as $event)
-                                <tr>
-                                    <th scope="row">{{ $event->id }}</th>
-                                    <td>{{ $event->name }}</td>
-                                    <td>{{ $event->description }}</td>
-                                    <td>{{ $event->location }}</td>
-                                    <td>{{ explode(' ',$event->date)[0]  }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+
+            {{-- Add Events form --}}
+            
+
+{{-- Create event --}}	
+{{-- name	image	date	location	 description --}}
+<div style="display:flex;width:100%;" class="m-4">
+    <a href="/events">
+        <ion-icon name="arrow-back-circle-outline" style="width: 60px;height:60px"></ion-icon>
+    </a>
+    <form action="/createEvent" method="post" class="eventInfo" enctype="multipart/form-data">
+        @csrf
+        <div style="width:100%;">
+            <p>NAME</p>
+            <input name="name" type="text" autofocus>
         </div>
+        <div style="width:100%;">
+            <p>DESCRIPTION</p>
+            <input name="description" type="text">
         </div>
-            <!-- Form End -->
+
+        
+        <div style="width:47%;">
+            <p>DATE</p>
+            <input name="date" type="date">
+        </div>
+        <div style="width:47%;margin-left:6%">
+            <p>LOCATION</p>
+            <input name="location" type="text">
+        </div>
+        <div style="width:100%;">
+            <p>IMAGE</p>
+            <input name="image" type="file">
+        </div>
+        <p>
+        <button type="submit" class="btn ">Add</button>
+        </p>
+    </form> 
+</div>
 
 
-            {{-- footer start --}}
-            @include('dashboard.adds.footer');
-            {{-- footer end --}}
+<!-- Table End -->
+
+           {{-- footer start --}}
+           @include('dashboard.adds.footer');
+           {{-- footer end --}}
 </body>
 
 </html>

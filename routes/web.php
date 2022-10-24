@@ -34,9 +34,11 @@ Route::get('/', function () {
     return view('index', ['events' => $allEvent]);
 });
 
+Route::get('about', function () {
+    return view('about');
+});
 // Route::get('user_events', [EventController::class, 'view']);
 
-Route::get('events', [EventController::class, 'view']);
 // Route::get('events', function () {
 //     return view('Events');
 // });
@@ -83,8 +85,6 @@ Route::get(
     '/login',
     [VolunteerController::class, 'login']
 )->name('login')->middleware('guest');
-// Route::get('login', [VolunteerController::class, 'login'])->name('login');
-// Route::post('/users/authenticate', [VolunteerController::class, 'authenticate']);
 
 // //login user
 Route::post('/users/authenticate',[VolunteerController :: class,'authenticate']);
@@ -122,8 +122,10 @@ Route::post('/users/authenticate', [VolunteerController::class, 'authenticate'])
 
 Route::get('/profile', [VolunteerController::class, 'profile'])->middleware('auth');
 
-Route::get('eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
+Route::get('/eventDescription/{id}', [VolunteerController::class, 'eventDescription']);
 
+
+// 
 // //donation
 //show donation page//form
 Route::get('/donate',  [DonationController::class, 'show'])->middleware('guest');
@@ -138,6 +140,13 @@ Route::post('/donate/details', [DonationController::class, 'store']);
 
 
 
+//Events
+Route::get('/showEvents', [EventController::class, "show"])->name('showEvent');
+Route::post('/createEvent', [EventController::class, "store"])->name('createEvent');
+Route::get('delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
+Route::get('update/{id}', [EventController::class, 'update'])->name('updateEvent');
+Route::post('/updatedEvent/{id}', [EventController::class, 'updateEvent']);
+
 Route::get('edit/{id}', [VolunteerController::class, 'edit']);
 Route::post('update/{id}',  [VolunteerController::class, 'update']);
 
@@ -146,7 +155,7 @@ Route::post('update/{id}',  [VolunteerController::class, 'update']);
 
 Route::get('dashboard', function () {
     return view('dashboard.index');
-});
+})->middleware('can:admin');;
 
 Route::get('users', function () {
     return view('dashboard.users');
@@ -154,10 +163,16 @@ Route::get('users', function () {
 
 Route::get('admin', function () {
     return view('dashboard.admin');
-});
+})->middleware('can:admin');;
 
-Route::get('events', function () {
-    return view('dashboard.events');
-});
+//admin views in dashboard
+Route::get('events', [EventController::class, 'show'])->middleware('can:admin');;
 
 
+//view events in inex
+Route::get('/show/events', [EventController::class, 'view']);
+
+Route::get('admin/dashboard/add_event', function () {
+    return view('Dashboard.AddEventdashboard');
+    // ->middleware('can:admin');
+})->name('addEvent')->middleware('can:admin');;
