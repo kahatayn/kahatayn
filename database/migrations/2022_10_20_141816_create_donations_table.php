@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('card')->unique();
-            $table->timestamp('date');
+            $table->string('card')->nullable();
+            $table->timestamp('date')->nullable();
             $table->float('amount');
             $table->rememberToken();
             $table->timestamps();

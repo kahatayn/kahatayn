@@ -176,7 +176,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae dolo
                                     </div>
     
                                     <div class="col-12 ">
-                                        <button type = 'submit' class="btn btn-primary px-5" name="Donate_bt"style="height: 60px;">
+                                        <button type = 'submit' class="btn btn-primary px-5"  name="Donate_bt"style="height: 60px;">
                                             تبرع الآن
                                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                                 <i class="fa fa-arrow-left"></i>
