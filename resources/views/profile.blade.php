@@ -95,7 +95,7 @@
                   <hr class="my-4">
                   <div class="widget-49-meeting-action">
                     <a href="eventDescription/{{ $event->id }}" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
-                    <a href="{{url('delete/'.$event['id'])}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">delete</a>
+                    <a href="/deleteev/{{$event->id}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">delete</a>
 
                 </div>
               </div>

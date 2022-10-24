@@ -214,10 +214,11 @@ class VolunteerController extends Controller
     public function destroy($id)
     {
         //
-        $ev = event::find($id);
+        // $ev = user_event::find($id);
+        $ev = DB::table('event_user')->where('event_id', $id);
+        // dd($ev);
         $ev->delete();
-        return redirect('index');
-        
+        return redirect('/profile');
     }
 
     //////////////
