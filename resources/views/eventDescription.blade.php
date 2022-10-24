@@ -35,7 +35,7 @@
                             <i class="fa fa-arrow-left"></i>
                         </div>
                     </a>
-                    <a class="btn btn-outline-primary py-2 px-3" href="/register">
+                    <a class="btn btn-outline-primary py-2 px-3" href="/newVol/{{ $event->id }}">
                         التسجيل كمتطوع
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                             <i class="fa fa-arrow-left"></i>
