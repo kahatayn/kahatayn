@@ -36,7 +36,7 @@
         </div>
         <div class="col-lg-8">
           <div class="card mb-4">
-            <div class="card-body"style ="   min-height: 303px;"  >
+            <div class="card-body"style ="   min-height: 250px;"  >
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">الاسم : </p>
@@ -85,15 +85,6 @@
                     عام <span class="mx-2">|</span> الفعالية في  <strong>{{ $event->location }}</strong> بتاريخ : {{ explode(' ',$event->date)[0] }}
                   </p>
                   <hr class="my-4">
-                  {{-- <div class="d-flex justify-content-start align-items-center">
-                    <p class="mb-0 text-uppercase"><i class="fas fa-cog me-2"></i> <span
-                        class="text-muted small">settings</span></p>
-                    <p class="mb-0 text-uppercase"><i class="fas fa-link ms-4 me-2"></i> <span
-                        class="text-muted small">program link</span></p>
-                    <p class="mb-0 text-uppercase"><i class="fas fa-ellipsis-h ms-4 me-2"></i> <span
-                        class="text-muted small">program link</span>
-                        
-                  </div> --}}
                   <div class="widget-49-meeting-action">
                     <a href="eventDescription/{{ $event->id }}" class="btn btn-sm btn-flash-border-primary">قراءة المزيد</a>
                 </div>
