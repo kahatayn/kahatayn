@@ -140,7 +140,7 @@ Route::get('/eventDescription/{id}', [VolunteerController::class, 'eventDescript
 // 
 // //donation
 //show donation page//form
-Route::get('/donate',  [DonationController::class, 'show']);
+Route::post('/donate',  [DonationController::class, 'show']);
 
 Route::post('/donate/details', [DonationController::class, 'store']);
 
