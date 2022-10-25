@@ -50,4 +50,16 @@
         </div>
     </div>
 </div>
+<script>
+    window.onscroll= ee=> {
+      let navbar=document.getElementById('navbar');
+      if(scrollY>200){
+        navbar.classList.add('bg-dark');
+        navbar.classList.add('fadeIn');
+      } else {
+        navbar.classList.remove('bg-dark');
+
+      }
+    }
+  </script>
 @endsection
