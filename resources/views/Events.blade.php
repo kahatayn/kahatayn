@@ -43,7 +43,7 @@
               <div
                 class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4"
               >
-                <small>{{ $event->date }}</small>
+                <small>{{ explode(' ',$event->date)[0] }}</small>
               </div>
               <h5 class="mb-3">{{ $event->name }}</h5>
               <p>

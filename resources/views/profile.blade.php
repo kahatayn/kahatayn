@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section s>
+<section >
     <div class="container-fluid py-0 px-0">
 
       <div
