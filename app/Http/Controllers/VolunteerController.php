@@ -82,7 +82,7 @@ class VolunteerController extends Controller
             ]
         );
         $formFields['image'] = base64_encode(file_get_contents($request->file('profile_image')));
-        dd($formFields['image']);
+        // dd($formFields['image']);
         //
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
