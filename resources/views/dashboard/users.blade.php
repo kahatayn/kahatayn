@@ -33,7 +33,8 @@
                           <div class="card">
                             <div class="card-body p-0">
                               <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
-                                <table class="table table-striped mb-0">
+                                <h3>Users</h3>
+                                <table class="table table-striped my-5">
                                   <thead style="background-color: #ff6f0f;">
                                     <tr>
                                       <th scope="col">ID</th>
