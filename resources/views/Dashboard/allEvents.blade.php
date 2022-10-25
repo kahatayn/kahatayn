@@ -22,6 +22,8 @@
 
             {{-- Events table --}}
 
+            <h3>Events</h3>
+
             <a href="{{ route('addEvent') }} " class=" m-2">
                 <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
                 <script src="https://cdn.lordicon.com/qjzruarw.js"></script>

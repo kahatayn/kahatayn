@@ -82,7 +82,9 @@ class VolunteerController extends Controller
             ]
         );
         $formFields['image'] = base64_encode(file_get_contents($request->file('profile_image')));
-        // dd($formFields['image']);
+
+
+
         //
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
@@ -108,7 +110,7 @@ class VolunteerController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
         // ->with('message','You have been logged out!');
     }
 
@@ -188,7 +190,6 @@ class VolunteerController extends Controller
             [
                 'name' => ['required', 'min:3'],
                 'email' => ['required', 'email'],
-                'password' => 'required|confirmed|min:6',
                 'phone' => ['required', 'max:10']
             ]
         );

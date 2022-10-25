@@ -37,7 +37,8 @@
                           <div class="card">
                             <div class="card-body p-0">
                               <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" >
-                                <table class="table table-striped mb-0">
+                                <h3>Donations</h3>
+                                <table class="table table-striped mb-0 my-5">
                                   <thead style="background-color: #ff6f0f;">
                                     <tr>
                                       <th scope="col">ID</th>

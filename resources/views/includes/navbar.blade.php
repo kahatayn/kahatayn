@@ -16,34 +16,32 @@
                 <a href="/show/events" class="nav-item nav-link">الفعاليات</a>
                 <a href="/about" class="nav-item nav-link">حول الموقع</a>
                 <a href="/contact" class="nav-item nav-link">اتصل بنا</a>
+                <a class="nav-item nav-link" href="/donateshow">تبرع الآن</a>
             </div>
 
-            <div class="d-none d-lg-flex ms-2">
+            {{-- <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="/donateshow">
                     تبرع الآن
-                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                        <i class="fa fa-arrow-left"></i>
-                    </div>
-                </a></div>
+                </a></div> --}}
 
                 @auth
                 {{-- (Auth::user()) --}}
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-outline-primary py-2 px-3" href="/profile">
-                    حسابي
+                    
                     <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                         <i class="fa fa-user"></i>
                     </div>
                 </a></div>
 
-                <div class="d-none d-lg-flex ms-2">
+                {{-- <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-outline-primary py-2 px-3" href="/logout">
                         تسجيل الخروج
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
 
                             <i class="fa fa-door-closed"></i>
                                                     </div>
-                    </a></div>
+                    </a></div> --}}
 
 
                     @else
@@ -58,6 +56,8 @@
 
                 @endauth
         </div>
+
+     @yield('dropDown')
     </nav>
 </div>
 <!-- Navbar End -->
