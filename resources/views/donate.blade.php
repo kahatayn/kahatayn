@@ -201,7 +201,7 @@
                                         setTimeout(function() {
                                             form.submit()
                                         },1550)
-                                    ">Submit
+                                    ">تبرع الآن
                                 </button>
 
 
