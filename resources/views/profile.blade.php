@@ -1,12 +1,12 @@
 @extends('master')
 
 @section('dropDown')
+                    
 <div class="dropdown">
-  <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn bg-white rounded-circle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     <ion-icon name="settings-outline" style="color: #ff6f0f"></ion-icon>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="/profile">حسابي</a></li>
     <li><a class="dropdown-item" href="/logout">تسجيل الخروج</a></li>
   </ul>
 </div>
@@ -85,7 +85,7 @@
 
     {{-- events section --}}
         <div class="container h-100">
-          <h1> -الفعاليات التي قمت بالمشاركة بها</h1>
+          <h4> -الفعاليات التي قمت بالمشاركة بها:</h4>
           @if(session()->has('message'))
     <div class="alert alert-danger m-3">
         {{ session()->get('message') }}
