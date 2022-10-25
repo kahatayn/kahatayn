@@ -110,7 +110,7 @@ class VolunteerController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
         // ->with('message','You have been logged out!');
     }
 
