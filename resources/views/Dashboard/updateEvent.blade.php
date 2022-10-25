@@ -38,24 +38,49 @@
         <div style="width:100%;">
             <p>NAME</p>
             <input name="name" type="text" value="{{ $event->name }}" autofocus>
+            @error('name')
+            <p class="text-danger text-end text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
         </div>
         <div style="width:100%;">
             <p>DESCRIPTION</p>
             <input name="description" type="text" value="{{ $event->description }}">
+            @error('description')
+            <p class="text-danger text-end text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
         </div>
 
         
         <div style="width:47%;">
             <p>DATE</p>
             <input name="date" type="date" value="{{ $event->date }}">
+            @error('date')
+            <p class="text-danger text-end text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
         </div>
         <div style="width:47%;margin-left:6%">
             <p>LOCATION</p>
             <input name="location" type="text" value="{{ $event->location }}">
+            @error('location')
+            <p class="text-danger text-end text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
         </div>
         <div style="width:100%;">
             <p>IMAGE</p>
             <input name="image" type="file">
+            @error('image')
+            <p class="text-danger text-end text-xs mt-1">
+                {{$message}}
+            </p>
+        @enderror
         </div>
         <p>
         <button type="submit" class="btn ">Update</button>
